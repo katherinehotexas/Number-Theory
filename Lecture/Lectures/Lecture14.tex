@@ -89,10 +89,54 @@
     \underline{Note}: Once you have a primitive root $g$, then all the other primitive roots
     are congruent to $g^h$ where $\gcd(h,p-1) = 1$.
 
-\section{How to find a primitive root}
+\section{Index}
     \begin{definition}
         Let $g$ be a primitive root of $p$ (or $n$ if $n$ has a primitive root).
         If $1\le a\le p-1$, the smallest positive exponent $k$ with $a\equiv g^k\pmod{p}$
         is called the \underline{index of $a\pmod{p}$} relative to $g$, 
         denoted $\ind(a)$.
     \end{definition}
+    \begin{theorem}
+        The following hold:
+        \begin{enumerate} [label=\alph*)]
+            \item $\ind(ab)\equiv \ind(a)+\ind(b)\pmod{p}$
+            \item $\ind(a^k)\equiv k\ind(a)\pmod{p-1}$ for $k\ge 1$.
+            \item $\ind(1)\equiv 0\pmod{p-1}$
+        \end{enumerate}
+        \begin{proof} [Proof (a)]
+            Let $g$ be a primitive root. By definition of index,
+            \begin{align*}
+                g^{\ind(a)} &\equiv a\pmod{p} \\
+                g^{\ind(b)} &\equiv b\pmod{p}
+            \end{align*}
+            Then,
+            \begin{align*}
+                g^{\ind(a)}g^{\ind(b)} &\equiv ab\pmod{p} \\
+                g^{\ind(a)+\ind(b)} &\equiv ab\pmod{p} \\
+                g^{\ind(a)+\ind(b)} &\equiv g^{\ind(ab)}\pmod{p}
+            \end{align*}
+            Recall: If $a^i\equiv a^j\pmod{n}$, then $i\equiv j\pmod{}$. \\
+            Hence $\ind(a)+\ind(b)\equiv \ind(ab)\pmod{p-1}$.
+        \end{proof}
+    \end{theorem}
+    The most important property: "taking indices of both sides"
+    If $a\equiv b\pmod{p}$, then
+    \begin{align*} 
+        g^{\ind(a)} &\equiv g^{\ind(b)}\pmod{p} \\
+        \ind(a) &\equiv \ind(b)\pmod{p-1}
+    \end{align*}
+    \begin{example}
+        Solve $4x^9\equiv 7\pmod{13}$. 
+
+        Take indices of both sides (relative to prim root $g$)
+        \begin{align*}
+            \ind(4x^9) &\equiv \ind(7)\pmod{12} \\
+            \ind(4)+9\ind(x) &\equiv 7\pmod{12} \\
+            2+9\ind(x) &\equiv 11 \\
+            9\ind(x) &\equiv 9\pmod{12}
+        \end{align*}
+        linear in the unknown $\ind(x)$ $\rightarrow 3$ solutions \\
+        Solutions $\ind(x)\equiv 1,5,9$ 
+
+        So $x\equiv 2^1,2^5,2^9\equiv 1,6,5\pmod{13}$.
+    \end{example}

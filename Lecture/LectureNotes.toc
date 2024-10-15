@@ -55,4 +55,4 @@
 \contentsline {chapter}{\numberline {14}Lecture 14}{47}{chapter.14}%
 \contentsline {section}{\numberline {14.1}Recap}{47}{section.14.1}%
 \contentsline {section}{\numberline {14.2}All primes have a primitive root}{47}{section.14.2}%
-\contentsline {section}{\numberline {14.3}How to find a primitive root}{48}{section.14.3}%
+\contentsline {section}{\numberline {14.3}Index}{48}{section.14.3}%
