@@ -1,0 +1,58 @@
+\contentsline {chapter}{\numberline {1}Lecture 1}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Open Problems}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Notation}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Divisibility}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}The Division Algorithm}{6}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Lecture 2}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Proof by Contradiction}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Proof by Induction}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Well Ordering Principle (WOP)}{8}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Lecture 3}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem - Diophantine Equations}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Bezout's Theorem}{11}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Euclidean Algorithm}{12}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Lecture 4}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Bezout, Euclid's Lemma}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Prime Numbers}{15}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Lecture 5}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modular Congruences}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Congruences with Unknowns}{19}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Lecture 6}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}From Last Time}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Solving stuff}{21}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Lecture 7}{25}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Last Time}{25}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Multiplicative Inverse}{25}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Stuff}{26}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Fermat's Little Theorem}{27}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Example}{27}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Primality Test}{27}{subsection.7.3.3}%
+\contentsline {chapter}{\numberline {8}Lecture 8}{29}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Last Time}{29}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Fermat's Little Theorem}{29}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Generalization to composite modulus}{29}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Euler Totient Function (Euler's Phi Function)}{29}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Euler's Theorem}{30}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}More on $\phi $}{30}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.4}Chinese Remainder Theorem}{31}{subsection.8.2.4}%
+\contentsline {chapter}{\numberline {9}Lecture 9}{33}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Last Time}{33}{section.9.1}%
+\contentsline {chapter}{\numberline {10}Lecture 10}{35}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Some more properties of primes}{35}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Wilson's Theorem}{36}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Review}{37}{section.10.3}%
+\contentsline {chapter}{\numberline {11}Lecture 11}{39}{chapter.11}%
+\contentsline {section}{\numberline {11.1}}{39}{section.11.1}%
+\contentsline {chapter}{\numberline {12}Lecture 12}{41}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Miscellaneous}{41}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Least Common Multiple}{41}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}More about $\phi $ (and number-theoretic functions)}{41}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}Lagrange's Theorem}{43}{subsection.12.1.3}%
+\contentsline {section}{\numberline {12.2}Order}{43}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}}{43}{subsection.12.2.1}%
+\contentsline {chapter}{\numberline {13}Lecture 13}{45}{chapter.13}%
+\contentsline {section}{\numberline {13.1}}{45}{section.13.1}%
+\contentsline {chapter}{\numberline {14}Lecture 14}{47}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Recap}{47}{section.14.1}%
+\contentsline {section}{\numberline {14.2}All primes have a primitive root}{47}{section.14.2}%
+\contentsline {section}{\numberline {14.3}How to find a primitive root}{48}{section.14.3}%

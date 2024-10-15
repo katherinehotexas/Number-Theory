@@ -1,0 +1,159 @@
+\chapter{Lecture 5}
+\date{September 10, 2024}
+
+\section{Modular Congruences}
+    Recall: We often use arguments like "n is of the form $4k,4k+1,4k+2,
+    \text{or }4k+3\dots$"
+
+    \begin{definition} [Precise]
+        Let $a,b,n\in\mathbb{Z}$ and $n>0$. We say that a is congruent to 
+        b mod n if $n|(a-b)$. We write
+        \[
+            a \equiv b \pmod{n}
+        \]
+    \end{definition}
+
+    \begin{definition} [Informal]
+        $a\equiv b$ mod n if a and b give the same remainder after division
+        by n. \\
+        Examples:
+        \begin{itemize}
+            \item $7\equiv 2 \pmod 5$
+            \item $-31\equiv 11 \pmod 7$
+            \item $10^{2024}+1\equiv 1 \pmod 10$
+            \item $a\equiv b \pmod 2$ iff a and b are both even or both odd
+            \item a can be written in the form 
+            \[ a=nk+r \]
+                iff $a\equiv r \pmod n$
+        \end{itemize}
+    \end{definition}
+
+    \begin{proposition}
+        Every integer is congruent modulo n to exactly one of $0,1,2,\dots,n-1$
+        \begin{proof}
+            Let $a\in\mathbb{Z}$. By the division algorithm, we can write
+            \[ a=nq+r,\ 0\leq r<n \]
+            Then $a-r=nq$, so $n|a-r$, ie.
+            \[ a\equiv r \pmod{n} \]
+            Uniqueness follows from uniqueness of division algorithm remainder.
+        \end{proof}
+    \end{proposition}
+
+    \begin{theorem}
+        Let $a,b,c\in\mathbb{Z}, n>0$. Then
+        \begin{enumerate}
+            \item $a\equiv a \pmod{n}$
+            \item if $a\equiv b \pmod{n}$ then $b\equiv a \pmod{n}$
+            \item if $a\equiv b \pmod{n}$ and $b\equiv c \pmod{n}$, then
+            $a\equiv c \pmod{n}$
+        \end{enumerate}
+        \begin{proof} [Proof (3)]
+            By definition, $n|a-b$ and $n|b-c$. Recall that if $n|r, n|s$, 
+            then $n|(rx+sy)$ for any $x,y\in\mathbb{Z}$. In particular,
+            \[
+                n|((a-b)+(b-c)) \Leftrightarrow n|(a-c)
+            \]
+            So $a\equiv c \pmod{n}$.
+        \end{proof}
+    \end{theorem}
+
+    \begin{theorem}
+        Let $a,b,c,d\in\mathbb{Z}$ and assume $a\equiv b \pmod{n}$.
+        \begin{enumerate}
+            \item if $c\equiv d \pmod{n}$, then $a+c\equiv b+d\pmod{n}$.
+            \item if $c\equiv d \pmod{n}$, then $ac\equiv bd \pmod{n}$.
+            \item $a^k\equiv b^k \pmod{n}\ \forall k\in\mathbb{Z}$.
+        \end{enumerate}
+        \begin{proof} [Proof (1)]
+            Suppose $a\equiv b \pmod{n}$ and $c\equiv d \pmod{n}$. By definition,
+            $n|a-b$ and $n|c-d$. \\
+            But, $(a+c)-(b+d)=(a-b)+(c-d)$ which is divisible by n, so 
+            $a+c\equiv b+d \pmod{n}$.
+        \end{proof}
+        \begin{proof} [Proof (3) by Induction]
+            Base case: $k=1$. Tautology \\
+            Inductive step: Assume for some $k>1$ that $a^k\equiv b^k \pmod{n}$
+            (WTS: $a^{k+1}\equiv b^{k+1}$) \\
+            Note by (2) we have 
+            \begin{align*}
+                a^k & \equiv b^k \pmod{n} & [IH]\\
+                a^k\cdot a & \equiv b^k\cdot b \pmod{n} & [2]\\
+                a^{k+1} & \equiv b^{k+1} \pmod{n}
+            \end{align*}
+        \end{proof}
+
+    \end{theorem}
+    
+    \textbf{WARNING}: In general, if $ac\equiv bc\pmod{n}$, it is not true that 
+    $a\equiv b\pmod{n}$. 
+    Ex: $2\cdot 3\equiv 2\cdot 0\pmod{6}$
+
+    \begin{example}
+        Show $41|(2^{20}-1) \Leftrightarrow$ Show $2^{20}\equiv 1 \pmod{41}$. \\
+        First, 
+        \begin{align*}
+            2^5 & \equiv 32 \pmod{41} \\
+            (2^5)^2 & \equiv (-9)^2 \\
+            2^{10} & \equiv 81 \pmod{41} \\
+            2^{10} & \equiv -1 \pmod{41} \\
+            2^{20} & \equiv (-1) \equiv 1 \pmod{41} 
+        \end{align*}
+    \end{example}
+
+    \begin{proposition}
+        A decimal integer is divisible by 3 iff the sum of its digits is 
+        divisible by 3.
+        \begin{proof}
+            Let n be an integer whose decimal representation is 
+            \[ (a_na_{n-1}\dots a_1a_0)_{10} \]
+            Then 
+            \[ a=a_0+a_1\cdot 10+a_2\cdot 100+\dots+a_n\cdot 10^n \]
+            Then
+            \[ a=a_0+a_1\cdot 10+\dots+a_n\cdot 10^n \pmod{n}\]
+            Since $10\mod 3\equiv 1$, we have
+            \[ a\equiv a_0+a_1+\dots+a_n\pmod{3} \]
+        \end{proof}
+    \end{proposition}
+
+\section{Congruences with Unknowns}
+    \begin{example}
+        Solve
+        \begin{align*}
+            x+12 &\equiv 5\pmod{8} \\
+            x &\equiv -7\pmod{8}
+        \end{align*}
+        We also have
+        \begin{itemize}
+            \item $x\equiv 1\pmod{8}$ is also a solution
+            \item $x\equiv 9$
+            \item $x\equiv 17$
+        \end{itemize}
+        But we consider these to be the "same" since they are congruent.
+    \end{example}
+
+    \begin{example}
+        Solve
+        \begin{align*}
+            4x &\equiv 3 \pmod{19} \\
+            20x &\equiv 15 \pmod{19} \\
+            x &\equiv 15 \pmod{19} \\
+            \text{Since } 20 &\equiv 1 \pmod{19}
+        \end{align*}
+    \end{example}
+
+    \begin{example}
+        Solve
+        \[
+            6x\equiv 15 \pmod{514}
+        \]
+        This has no solutions. \\
+        Why?! $6x-15$ is always odd. \\
+        In particular, $514\nmid (6x-15)$. \\
+        In general, we want to understand when $ax\equiv b$ has solutions 
+        and how to find them.
+    \end{example}
+
+    \begin{example}
+        $18x\equiv 8 \pmod{22}$ has incongruent solutions \\
+        $x\equiv 20 \pmod{22}$ and $x\equiv a\pmod{22}$
+    \end{example}

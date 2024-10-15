@@ -1,0 +1,72 @@
+\chapter{Lecture 1}
+\date{August 27, 2024}
+
+\section{Open Problems}
+    \begin{itemize}
+        \item Twin Primes Conjecture: Do there exist infinitely many pairs of primes 
+        that are 2 apart?
+        \item Collatz Conjecture, 3n+1 Problem - Does this process eventually stop for all n?
+        \item Fermat's Last Theorem: The equation $x^n+y^n=z^n$ has no (non-trivial)
+        integer solution when $n\geq 3$. \\
+            Note: When $n=2$, there are infinite solutions (Pythagorean triples)
+    \end{itemize}
+
+\section{Notation}
+    \begin{itemize}
+        \item Natural numbers: $\mathbb{N} = \{1,2,3,4,\dots\}$
+        \item Integers: $\mathbb{Z} = \{\dots,-2,-1,0,1,2,\dots\}$
+        \item Rational Numbers: $\mathbb{Q} = \{\frac{a}{b}|a,b\in\mathbb{Z}, b\neq 0\}$
+    \end{itemize}
+
+\section{Divisibility}
+    \begin{definition}
+        Let $n,m\in\mathbb{Z}$. We say that $n$ divides $m$ and write $n|m$ if there exists
+        an integer $k$ such that $m=nk$. 
+        \[ \text{Ex: } 2|4, 5|-5, 3|0, 0|0\]
+        If n does not divide m: $n\nmid m$
+        \[ \text{Ex: } 2\nmid 3, 0\nmid 5\]
+    \end{definition}
+
+    \begin{theorem}
+        For $a,b,c\in\mathbb{Z}$, the following hold:
+        \begin{enumerate}
+            \item $a|0$, $1|a$, $a|a$
+            \item $a|1$ iff $a=\pm b$
+            \item If $a|b$ and $c|d$ then $ac|bd$
+            \item If $a|b$ and $b|c$ then $a|c$
+            \item $a|b$ and $b|a$ iff $a=\pm b$
+            \item If $a|b$ and $b\neq 0$, then $|a|\leq |b|$
+            \item If $a|b$ and $a|c$, then $a|(bx+cy)$ for $x,y\in\mathbb{Z}$ \\
+                Ex. If b, c are even, then (any multiple of b) +
+                (any multiple of c) is even.
+        \end{enumerate}
+
+        \begin{proof} [Proof (2)]
+            First, assume $a|1$. By definition, there exists an integer k 
+            such that $1=ak$. \\ Note: $k\neq 0$ and $a\neq 0$, so
+            \[ |ak|=|a||k| \geq |a| \text{ since } |k| \geq 1 \]
+            Thus, $1=|ak|\geq |a|$. \\
+            Also, $|a|\geq 1$ since $a\neq 0$ and $a\in\mathbb{Z}$.
+            Thus, $|a|=1$ which is equivalent to $a=\pm 1$. \\\\
+            Next, assume $a=\pm 1$.
+            \begin{itemize}
+                \item If $a=1$: $a|1$ since $1=a\cdot 1$
+                \item If $a=-1$: $1=a\cdot -1$
+            \end{itemize}
+            In both cases, $a|1$ as desired.
+        \end{proof}
+
+        \begin{proof} [Proof (4)]
+            Assume $a|b$ and $b|c$. \\
+            By definition, there exist integers i and j such that 
+            $b=a\cdot i$ and $c=b\cdot j$. \\
+            Then, $c=(a\cdot i)\cdot j=a(ij)$. \\
+            So, $a|c$ by definition.
+        \end{proof}
+    \end{theorem}
+
+\section{The Division Algorithm}
+    \begin{theorem}
+        Given integers a and b with $b\neq 0$, there exist unique integers q and r such that
+        \[ a=bq+r,\ 0\leq r\leq |b| \]
+    \end{theorem}

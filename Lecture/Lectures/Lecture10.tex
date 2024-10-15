@@ -1,0 +1,99 @@
+\chapter{Lecture 10}
+\date{September 26, 2024}
+
+\section{Some more properties of primes}
+    \underline{Freshmen's Dream}
+    \[ (x+y)^n = x^n + y^n \quad\text{False!} \]
+    \begin{align*}
+        (x+y)^n &= \sum_{k=0}^{n}x^k y^{n-k} \\
+        \text{where}\quad {n\choose k} &= \frac{n!}{k!(n-k)!}
+    \end{align*}
+    If $n=p$ is prime, then
+    \[ (x+y)^p = \sum_{k=0}^{p}{p\choose k}x^k y^{n-k} \]
+    From HW: for $0<<k<p$, we have $p\mid {p\choose k}$. \\\\
+    So, $(x+y)^p = x^p + y^p + p\cdot\text{some poly w/ } \ZZ \text{ coeffs}$. \\\\
+    Reducing $\pmod{p}$, we have 
+    \[ (x+y)^p\equiv x^p+y^p\pmod{p} \]
+
+    On the topic of polynomials$\dots$ \\\\
+    Solving $F(x)\equiv 0\pmod{n}$ can be weird. \\
+    \begin{example}
+        Find all solutions (up to congruence) to 
+        \[ x^2\equiv 0\pmod{9} \]
+        $x=0, x=3, x=6 \leftarrow 3$ roots to a polynomial $F(x)=x^2$ 
+        of degree 2. \\
+        This happens because 9 is not prime.
+    \end{example}
+
+    \begin{theorem}
+        Let $F(x)$ be a polynomial of degree $r$. 
+        Then $F(x)$ has at most $r$ roots mod any prime $p$
+        (as long as $p\nmid$ (leading coeff)).
+        \begin{example}
+            From HW you showed that the only square roots of $1\pmod{p}$ 
+            were 1 and -1.
+        \end{example}
+    \end{theorem}
+
+\newpage
+\section{Wilson's Theorem}
+    \begin{theorem} [Wilson's Theorem]
+        Let $p$ be a prime. Then
+        \[ (p-1)!\equiv -1\pmod{p} \]
+        \begin{example}
+            $p=11$:
+            \[ (1)(2)\dots(9)(10) \]
+            \begin{itemize}
+                \item 1 and 10 pair to themselves.
+                \item 2 pairs with 6. $(2\cdot 6)-1$
+                \item 3 pairs with 4.
+                \item 5 pairs with 9.
+                \item 7 pairs with 8.
+            \end{itemize}
+            \begin{align*}
+                10! &= (1)(2\cdot 6)(3\cdot 4)(5\cdot 9)(7\cdot 8)\cdot 10 \\
+                &\equiv (1)(1)(1)(1)(1)(-1) - 1 \pmod{11}
+            \end{align*}
+        \end{example}
+        \begin{proof}
+            Let $p$ be prime and consider the integers $2,3,\dots,p-2$.
+            Each one of these integers has some inverse $\pmod{p}$.
+            ie. If $a\in\{ 2,3,\dots,p-2 \}$, then $ax\equiv 1\pmod{p}$
+            has a solution. \\\\
+            Claim: For each $a\in\{ 2,3,\dots,p-2 \}$,
+            \[ a\not\equiv a^{-1} \pmod{p} \]
+            Why? If $a\equiv a^{-1}\pmod{p}$, then
+            \[ a^2\equiv 1\pmod{p} \]
+            From HW, the solutions are exactly 
+            \[ a\equiv 1 \quad\text{or}\quad a\equiv -1 \]
+            Then we can pair each $a\in\{ 2,3,\dots,p-2 \}$ with its inverse
+            $\pmod{p}$ to get 
+            \[ (p-1)! = 1((2)(3)\dots(p-2))(p-1) \equiv -1 \pmod{p} \]
+            Note: $(2)(3)\dots(p-2)\equiv 1\pmod{p}$, $(p-1)\equiv -1\pmod{p}$.
+        \end{proof}
+        Note: We really need $p$ to be prime.
+        \begin{example}
+            Look at $x^2\equiv 1\pmod{8}$.
+            \[ x\equiv 1, x\equiv -1(\equiv 7), x\equiv 3, x\equiv 5, x\equiv 7 \]
+            Remark: $F(x) = x^2 - 1$ has 4 roots $\pmod{8}$. 
+        \end{example}
+    \end{theorem}
+
+\newpage
+\section{Review}
+    \begin{example}
+        Compute $3^{104}\pmod{101}$
+        \begin{align*}
+            3^{100} &\equiv 1\pmod{101} \\
+            3^4\cdot 3^{100} &\equiv 3^4\pmod{101} \\
+            3^{104} &\equiv 81\pmod{101}
+        \end{align*}
+    \end{example}
+
+    \begin{example}
+        For $n>3$, $\phi(n)$ is even. \\
+        $\phi$ is multiplicative. $\rightarrow$ compute $\phi$ from prime factorization. \\
+        Write $n=p_1^{k_1}\dots p_r^{k_r}$ then
+        \[ \phi(n) = \phi(p_1^{k_1}\dots \phi(p_r^{k_r})) = (p_1^{k_1}-p_1^{k_1-1})\dots (p_r^{k_r} - p_r^{k_r-1}) \]
+
+    \end{example}

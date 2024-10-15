@@ -1,0 +1,177 @@
+\documentclass[11pt]{article}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem*{defn*}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+
+\usepackage[Glenn]{fncychap}
+% Sonny Lenny Glenn Conny Rejne Bjarne Bjornstrup
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+
+\title{M328K: Homework 3}
+\author{Katherine Ho}
+\date\today
+\begin{document}
+\maketitle
+
+\begin{defn*}
+    A \emph{complete residue system modulo $n$} is a set of integers such that every integer is congruent modulo $n$ to exactly one integer in the set. For example, the ``canonical'' complete residue system modulo $n$ is the set of integers $\{0,1,2,\dots,n-1\}$.
+\end{defn*}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Prove that any set of $n$ incongruent integers modulo $n$ forms a complete residue system modulo $n$.
+        \begin{proof}
+            Suppose a set of $n$ integers does not form a complete residue system mod $n$. 
+            Then it contains at least one integer $a$ that is not congreuent to another integer in the set.
+            This means when $a$ is divided by $n$, then none of the other elements are equal to its remainder.
+            There are at most $n-1$ remainders in the set. By the pigeonhole principle, at least 2 
+            integers in the set have the same remainder $\pmod{n}$. However this contradicts the supposition 
+            where $a$ is incongruent with all of the other integers in the set. Hence any set of $n$ incongruent 
+            integers modulo $n$ forms a complete residue system modulo $n$. \\
+        \end{proof}
+        
+        \item Suppose $\gcd(a,n)=1$. Prove that the integers $$c,c+a,c+2a,\dots,c+(n-1)a$$ form a complete residue system modulo $m$ for any $c$.\footnote{Note: With $c=0$, this is the fundamental fact we used in class to prove Fermat's Little Theorem.}
+    \end{enumerate}
+    \item Find a complete (up to congruence) set of solutions to the linear congruence $34x\equiv 60 \pmod{98}$.
+    \begin{proof}
+        We have that $\gcd(34,98)=2$. Also, $2\mid 60$, so there are 2 solutions $\pmod{98}$.
+        First we can find a solution to
+        \begin{align*}
+            17x &\equiv 30\pmod{49} \\
+            17x - 49y &= 30
+        \end{align*}
+        Then, by the Euclidean Algorithm:
+        \begin{align*}
+            49 &= 17(2) + 15 \\
+            49 - 17(2) &= 15 \\
+            49(2) - 17(4) &= 30 \\
+            17(-4) - 49(-2) &= 30
+        \end{align*}
+        \begin{center}
+            $x=-4$, $y=-2$
+        \end{center}
+        So, $x=-4+49=45$ is a solution. The other solution $\pmod{98}$ is 
+        \[ x=45+49=94 \]
+        $x=45,94$ is a complete set of solutions up to congruence $\pmod{98}$.
+    \end{proof}
+
+    \item This exercise illustrates a neat inductive proof of Fermat's Little Theorem using the binomial theorem.
+    \begin{enumerate}
+        \item Let $p$ be prime. Show that $p$ divides ${p\choose k}$ for $1\leq k\leq p-1$, where $${p\choose k} = \frac{p!}{k!(p-k)!} = \frac{p(p-1)\cdots(p-k+1)}{1\cdot2\cdot 3\cdots k}.$$ Hint: First show that $p$ divides $\displaystyle k! {p\choose k}$.
+        \begin{proof}
+            Let $n={p\choose k}$:
+            \begin{align*}
+                n &= {p\choose k} \\
+                n &= \frac{p!}{k!(p-k)!} \\
+                n\cdot k!(p-k)! &= p! 
+            \end{align*}
+            $p$ divides $p!$, so the left expression is also divisible by $p$. \\
+            This means that at least one factor of the expression is divisible by $p$.
+            \begin{enumerate}
+                \item $k!$ is not divisible by $p$ since it is less than $p$ and $p$ is prime.
+                \item $(p-k)!$ is not divisible by $p$ since $p-k$ is less than $p$ and $p$ is prime.
+            \end{enumerate}
+            This leaves $n$, which must be divisible by $p$. Therefore, $p$ divides ${p\choose k}$.
+        \end{proof}
+
+        \item Use induction on $a$ together with the binomial theorem\footnote{Binomial theorem: $\displaystyle(a+1)^p = a^p + {p\choose 1}a^{p-1}+\cdots + {p\choose k}a^{p-k} + \cdots + {p\choose p-1}a + 1$} to give another proof of Fermat's Little Theorem.
+        \begin{proof}
+            We aim to prove $a^{p-1}\equiv 1\pmod{p}$ for a prime $p$ and $p\nmid a$. 
+            It can be rewritten as $a^p\equiv a\pmod{p}$. \\
+            Base case ($a=1$): $1^{p}\equiv 1\pmod{p}$. 
+            \[ 1^{p}-1 = px \quad\text{ for some } x\in\ZZ \]
+            This is true for any prime $p$ and $x=0$. \\
+            \underline{Inductive Hypothesis}: Assume $a^p\equiv a\pmod{p}$ for an integer 
+            $a\in\ZZ$ is true. \\
+            Consider $a+1$:
+            \[
+                (a+1)^{p} = a^p + {p\choose 1}a^{p-1}+\cdots + {p\choose k}a^{p-k} + \cdots + {p\choose p-1}a + 1 \\
+            \]
+            By (a), each binomial coefficient ${p\choose k}$ is divisible by $p$ since $p$ is prime. 
+            So, if we take $\pmod{p}$ of this sum, we are left with:
+            \begin{align*}
+                (a+1)^{p} \equiv a^p + 1 \pmod{p}
+            \end{align*}
+            $a^p\equiv a\pmod{p}$ is true for $a+1$, thus proving Fermat's Little Theorem.
+        \end{proof}
+        
+    \end{enumerate}
+
+    \item A composite integer $n>1$ is called a \emph{Fermat pseudoprime to base $a$} if $a^{n-1}\equiv 1\pmod n$.
+        \begin{enumerate}
+            \item Prove the following: If $d,n\in \NN$ with $d\mid n$, then $2^d -1\mid 2^n-1$.
+            
+            Hint: Use the identity $$x^k-1 = (x-1)(x^{k-1}+x^{k-2}+\cdots+x+1).$$
+            \begin{proof}
+                Let $n=db$ for some $b\in\ZZ$.
+                \begin{align*}
+                    2^n-1 &= 2^{db}-1 \\
+                    2^n-1 &= (2^d)^b-1 \\
+                    2^n-1 &= (2^d-1)((2^d)^{b-1}+(2^d)^{b-2}+\dots+(2^d)^1+(2^d)^0)
+                \end{align*}
+                Thus if $d,n\in \NN$ with $d\mid n$, then $2^d -1\mid 2^n-1$.
+            \end{proof}
+
+            \item Prove that if $n$ is a Fermat pseudoprime to base $2$, then $M_n = 2^n - 1$ is also a Fermat pseudoprime to base $2$.
+            \begin{proof}
+                If $n\mid 2^{n-1}-1$, then $2^{n-1}-1 = nx$ for some $x\in\ZZ$. 
+            \end{proof}
+
+            \item Conclude that there are infinitely many Fermat pseudoprimes to base $2$.
+            \begin{proof}
+                
+            \end{proof}
+        \end{enumerate}
+    
+    \item A \emph{Carmichael} number is an integer $n>1$ that is a Fermat pseudoprime to base $a$ for all $a$ with $\gcd(a,n) = 1$.
+    \begin{enumerate}
+        \item Prove that if $n=p_1p_2\cdots p_r$ is a composite square-free integer such that $p_i-1\mid n-1$ for $i=1,2,\dots,r$, then $n$ is a Carmichael number.
+        \begin{proof}
+            
+        \end{proof}
+
+        \item Show that $6601$ is a Carmichael number.
+        \begin{proof}
+            
+        \end{proof}
+    \end{enumerate}
+
+    \item Prove the converse to Wilson's Theorem: If $(m-1)! \equiv -1 \pmod m$, then $m$ is prime.
+    \begin{proof}
+        Let $m$ be composite. That is, $m=ab$ for some $1<a<b<m$. \\
+        % ($a\mid m$ and $b\mid m$).  \\
+        We can then say $a\mid (m-1)!$ since $1<a<m$. 
+        If Wilson's Theorem holds for $m$, then
+        \begin{align*}
+            (m-1)! &\equiv -1\pmod{m} \\
+            (m-1)! &= mx-1 \quad\text{for some x }\in\ZZ
+        \end{align*}
+        So, $m \mid (m-1)!+1$. Since $a|m$, then $a \mid (m-1)!+1$. 
+        We can conclude that $a\mid 1$ since we also have $a\mid (m-1)!$. 
+        If this is true, then $a=1$.
+        However, this is a contradiction to $1<a<m$. Thus $m$ cannot be composite. 
+        Therefore if $(m-1)! \equiv -1 \pmod m$, then $m$ is prime.
+    \end{proof}
+
+\end{enumerate}
+
+
+\end{document}

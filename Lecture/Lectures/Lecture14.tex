@@ -1,0 +1,98 @@
+\chapter{Lecture 14}
+\date{October 15, 2024}
+
+\section{Recap}
+    If $\gcd(a,n) = 1$, the order of $a$ is the smallest positive exponent
+    $k$ such that $a^k\equiv 1\pmod{n}$
+    \begin{itemize}
+        \item If $a^m\equiv 1\pmod{n}$, then $\ord{a}\mid m$
+        \item $a,a^n,\dots,a^{\ord{n}}$ are all incongruent $\pmod{n}$
+        \item If $\ord{a}=\phi(n)$, then $a$ is called a \underline{primitive root} and
+        $a,\dots,a^{\phi(n)}\pmod{n}$ are congruent to all the integers between $1$ and $n$, 
+        coprime to $n$
+    \end{itemize}
+
+\section{All primes have a primitive root}
+    \begin{theorem}
+        Let $p$ be prime and $d\mid p-1$. Then there are exactly $\phi(d)$
+        integers (that are mutually incongruent $\pmod{p}$) that have
+        order $d\pmod{p}$. In particular there are $\phi(p-1)$ primitive roots.
+        \begin{lemma}
+            If $d\mid p-1$, then $x^d\equiv 1\pmod{p}$ has exactly $d$ incongruent
+            solutions $pmod{p}$.
+            \begin{proof}
+                $x^{p-1}-1\equiv x^{dk}-1 = (x^d - 1)(x^{d(k-1)}+\dots+x^d+x)$
+            \end{proof}
+        \end{lemma}
+        \begin{proof} [Proof of Thm.]
+            Define $\psi(d) = \#$ of integers $1\le x\le p-1$ having order $d\pmod{p}$. \\
+
+            \underline{WTS}: $\psi(d) = \phi(d)$ for $d\mid p-1$ \\
+            Instead, let's prove $\psi(d)\le \phi(d)$ when $d\mid p-1$. 
+            If there are no integers with order $d$, then
+            \[ \psi(d) = 0\le \phi(d) \]
+            Hence assume there exists at least one integer $a$ with $\ord_{p}{a} = d$. \\
+
+            \underline{Claim}: If $b$ has order $d$, then $b\equiv a^h\pmod{p}$ for some $h$.
+            Why? If $b$ has order $d$, then $b$ satisfies:
+            \[ x^d\equiv 1\pmod{p} \quad*\]
+            which has exactly $d$ incongruent solutions. On the other hand,
+            the integers $a,a^2,a^3,\dots,a^d$ are all incongruent $\pmod{p}$
+            and they all satisfy $*$, since 
+            \[ (a^{i})^d \equiv (a^d)^i \equiv 1^i \equiv 1 \pmod{p} \]
+            Since $*$ has exactly $d$ solutions $\pmod{p}$, we must have 
+            $b\equiv a^h\pmod{p}$ for some $h$, $1\le h\le d$. \\
+
+            Now, we need to determine which $a^k$ has $\ord{a^k} = d$. 
+            But $\ord{a^k} = \frac{d}{\gcd(h,d) = d}$
+            precisely when $\gcd(h,d) = 1$. Hence there are exactly
+            $\phi(d)$ exponents $h$ such that $a^h$ has order $d$. 
+            Thus, we find $\psi(d)=\phi(d)$. We have shown for $d\mid p-1$,
+            $\psi(d)$ is either $0$ or $\phi(d)$. But we know $\psi(d)\le \phi(d)$.
+
+            Consider the sum
+            \[ \sum_{d\mid p-1}^{}\psi(d). \]
+            Note every integer $a$ between $1\le a\le p-1$ has some $\ord{a}$ 
+            that divides $p-1$.
+            Since each integer between $1$ and $p-1$ is counted exactly once,
+            we have 
+            \[ \sum_{d\mid p-1}^{} \psi(d) = p-1 \]
+            \begin{mdframed}
+            \begin{example}
+                p = 7 
+                \begin{align*}
+                    \ord{1} &= 2 \\
+                    \ord{2} &= 3 \\
+                    \ord{3} &= 6 \\
+                    \ord{4} &= 3 \\
+                    \ord{5} &= 6 \\
+                    \ord{6} &= 2
+                \end{align*}
+                \begin{align*}
+                    \sum_{d\mid p-1}^{}\psi(d) &= \sum_{d\mid 6}^{} \psi(d) \\
+                    &= \psi(1)+\psi(2)+\psi(3)+\psi(6) \\
+                    &= 1+1+2+2 \\
+                    &= 6 \\
+                    &= p-1
+                \end{align*}
+            \end{example}
+            \end{mdframed}
+
+            Recall 
+            \[ \sum_{d\mid p-1}^{}\phi(d) = p-1 \]
+            Hence
+            \[ \sum_{d\mid p-1}^{}\psi(d) = \sum_{d\mid p-1}^{}\phi(d), \quad\psi(d)\le \phi(d) \]  
+            Thus $\psi(d) = \phi(d) \quad\forall\quad d\mid p-1$.
+        \end{proof}
+    \end{theorem}
+
+    \underline{Note}: Once you have a primitive root $g$, then all the other primitive roots
+    are congruent to $g^h$ where $\gcd(h,p-1) = 1$.
+
+\section{How to find a primitive root}
+    \begin{definition}
+        Let $g$ be a primitive root of $p$ (or $n$ if $n$ has a primitive root).
+        If $1\le a\le p-1$, the smallest positive exponent $k$ with $a\equiv g^k\pmod{p}$
+        is called the \underline{index of $a\pmod{p}$} relative to $g$, 
+        denoted $\ind(a)$.
+    \end{definition}
