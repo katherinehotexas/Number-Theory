@@ -181,6 +181,9 @@ INPUT Lectures\Lecture13.aux
 INPUT .\Lectures\Lecture14.aux
 INPUT .\Lectures\Lecture14.aux
 INPUT Lectures\Lecture14.aux
+INPUT .\Lectures\Lecture15.aux
+INPUT .\Lectures\Lecture15.aux
+INPUT Lectures\Lecture15.aux
 OUTPUT LectureNotes.aux
 INPUT C:\Users\katie\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\katie\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -345,6 +348,12 @@ OUTPUT Lectures\Lecture14.aux
 INPUT .\Lectures\Lecture14.tex
 INPUT .\Lectures\Lecture14.tex
 INPUT Lectures\Lecture14.tex
+INPUT .\Lectures\Lecture15.tex
+INPUT .\Lectures\Lecture15.tex
+OUTPUT Lectures\Lecture15.aux
+INPUT .\Lectures\Lecture15.tex
+INPUT .\Lectures\Lecture15.tex
+INPUT Lectures\Lecture15.tex
 INPUT LectureNotes.aux
 INPUT .\Lectures\Lecture1.aux
 INPUT .\Lectures\Lecture1.aux
@@ -388,6 +397,9 @@ INPUT Lectures\Lecture13.aux
 INPUT .\Lectures\Lecture14.aux
 INPUT .\Lectures\Lecture14.aux
 INPUT Lectures\Lecture14.aux
+INPUT .\Lectures\Lecture15.aux
+INPUT .\Lectures\Lecture15.aux
+INPUT Lectures\Lecture15.aux
 INPUT .\LectureNotes.out
 INPUT .\LectureNotes.out
 INPUT C:\Users\katie\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk

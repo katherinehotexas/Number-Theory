@@ -1,0 +1,179 @@
+\chapter{Lecture 15}
+\date{October 17, 2024}
+
+\section{Recall}
+    \subsection{Indices $\pmod{p}$ relative to a primitive root $g$}
+    \[
+        g,g^2,\dots, g^{p-1}\equiv 1,2,3,\dots,p-1\pmod{p}
+    \]\
+    \begin{example}
+        Does $x^k\equiv a\pmod{p}$ have a solution? Take indices of both sides
+        \begin{align*}
+            \ind(x^k) &\equiv \ind(a)\pmod{p-1} \\
+            k\ind(x) &\equiv \ind(a)\pmod{p-1} \\
+            ky &\equiv \ind(a)\pmod{p-1}
+        \end{align*}
+    \end{example}
+    \subsection{}
+    $ax\equiv b\pmod{n}$ has a solution iff $\gcd(a,n)\mid b$. 
+    Let $d=\gcd(k,p-1)$. Then $x^k\equiv a\pmod{p}$ has a solution iff
+    \[ d\mid\ind(a) \]
+    \begin{theorem}
+        Let $p$ be prime and $p\nmid a$. Then $x^k\equiv a\pmod{p}$ 
+        has a solution iff 
+        \[ a^{\frac{p-1}{d}}\equiv 1\pmod{p} \] 
+        where $d=\gcd(k,p-1)$. 
+        If so it has exactly $d$ incongruent solutions.
+        \begin{proof}
+            Taking indices, the congruence
+            \[
+                a^{\frac{p-1}{d}}\equiv 1\pmod{p}
+            \]
+            is equivalent to 
+            \begin{align*}
+                \frac{p-1}{d}\ind(a)\equiv \ind(1)\pmod{p-1} \\
+                \frac{p-1}{d}\ind(a)\equiv 0\pmod{p-1} 
+            \end{align*}
+            is equivalent to 
+            \[
+                \frac{p-1}{d}\ind(a)\equiv (p-1)m \quad\text{for some } m\in\ZZ
+            \]
+            $\leftrightarrow\ind(a)=dm$ is equivalent to $d\mid\ind(a)$
+            iff $x^k\equiv a\pmod{p}$ has a solution.
+        \end{proof}
+    \end{theorem}
+
+\section{Quadratic Residue}
+    \subsection{Quadratic Residue}
+    \begin{definition}
+        Let $p$ be prime and $p\nmid a$. We say that $a$ is a \underline{quadratic residue}
+        of $p$ (or $\pmod{p}$) and write "a is QR" if the congruence
+        $x^2\equiv a\pmod{p}$ has a solution.
+
+        Otherwise we say that $a$ is a quadratic nonresidue or "a is NR".
+    \end{definition}
+    \begin{example}
+        Compute quadratic residues of $p=13$
+        \begin{align*}
+            1^2\equiv 1\equiv 12^2 \\
+            2^2\equiv 4\equiv 11^2 \\
+            3^2\equiv 9\equiv 1-^2 \pmod{13} \\
+            4^2\equiv 3\equiv 9^2 \\
+            5^2\equiv 12\equiv 8^2 \\
+            6^2\equiv 1-\equiv 7^2
+        \end{align*}
+        QR: $1,3,4,9,10,12$. \\
+        NR: $2,5,6,7,8,11$
+    \end{example}
+
+    Q: Given $a$, how do you determine if $a$ is QR or NR?
+    $\leftrightarrow$ When does $x^2\equiv a\pmod{p}$? \\
+    Using indices $\rightarrow$ Theorem (Euler's Criterion): \\
+    $x^2\equiv a\pmod{p}$, $p$ odd has a solution iff
+    \[
+        a^{\frac{p-1}{2}}\equiv 1\pmod{p}
+    \]
+
+    \begin{example}
+        $3^{\frac{13-1}{2}}\equiv 3^6 \equiv (3^2)^3\equiv (9^3) \equiv (-4)^3\equiv 1\pmod{13}$ \\
+        \[
+            2^{\frac{13-1}{2}}\equiv 2^6\equiv 2^4\cdot 2^2\equiv 4^2\cdot 4\equiv -1\pmod{13}
+        \]
+    \end{example}
+
+    \subsection{Euler's Criterion}
+    \begin{theorem} [Euler's Criterion]
+        Let $p$ be odd prime and $p\nmid a$. Then $a$ is QR iff 
+        \[ a^{\frac{p-1}{2}}\equiv 1\pmod{p} \]
+        and $a$ is NR iff
+        \[ a^{\frac{p-1}{2}}\equiv -1\pmod{p} \]
+        \begin{proof}
+            Let $p$ be an odd prime and $p\nmid a$. Assume $a$ is NR. 
+            Then we will show $a^{\frac{p-1}{2}}\equiv 1\pmod{p}$. \\
+            Let $c\in\{1,\dots,p-1\}$. Consider $cx\equiv a\pmod{p}$. \\
+            Since $\gcd(c,p)=1$, this has a unique solution $c'\in\{1,\dots,p-1\}$. \\
+            Note $c\ne c'$, otherwise $cc'\equiv a\pmod{p}$, $c^2\equiv a\pmod{p}$
+            contradicts $a$ is NR. 
+            So every $c\in\{1,\dots,p-1\}$ has a distinct $c'$ such that 
+            $cc'\equiv a\pmod{p}$. 
+            Hence we get $\frac{p-1}{2}$ pairs $(c_1, c_1'),\dots,(c_{\frac{p-1}{2}}, c_{\frac{p-1}{2}}')$
+            Such that 
+            \[ c_2c_2'\equiv a\pmod{p} \]
+            We have 
+            \begin{align*}
+                c_1c_1' &\equiv a\pmod{p} \\
+                c_{\frac{p-1}{2}}c_{\frac{p-1}{2}}' &\equiv a\pmod{p}
+            \end{align*}
+            Multiplying these together,
+            \[
+                (c_1c_1')(c_2c_2')\dots(c_{\frac{p-1}{2}}c_{\frac{p-1}{2}}') \equiv a^{\frac{p-1}{2}} \pmod{p}
+            \]
+            But $c_1,c_1',c_2,c_2',\dots,c_{\frac{p-1}{2}}c_{\frac{p-1}{2}}'$
+            is just a permutation of $1,2,\dots,p-1$. \\
+            So, 
+            \begin{align*}
+                a^{\frac{p-1}{2}} &\equiv c_1c_1'c_2c_2\dots c_{\frac{p-1}{2}}c_{\frac{p-1}{2}}' \\
+                a^{\frac{p-1}{2}} &\equiv (p-1)! \\
+                a^{\frac{p-1}{2}} &\equiv -1 \pmod{p} \quad\quad\text{(Wilson)}\\
+            \end{align*}
+        \end{proof}
+    \end{theorem}
+
+\section{Legendre}
+    \begin{definition}
+        Let $p$ be an odd prime and $p\nmid a$. The \underline{Legendre symbol}
+        of $a$ with respect to $p$ is defined 
+        \[
+            \legendre{a}{p} = 
+            \begin{cases}
+                1 \text{ if a is QR} \\
+                -1 \text{ if a is NR} 
+            \end{cases}
+        \]
+    \end{definition}
+    \begin{theorem}
+        The Legendre sumbol has the following properties
+        \begin{enumerate}
+            \item $a\equiv b\pmod{p} \rightarrow \legendre{a}{p} = \legendre{b}{p}$
+            \item $\legendre{a}{p^2} = 1$
+            \item $\legendre{a}{p}\equiv a^{\frac{p-1}{2}}\pmod{p}$
+            \item $\legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}$
+            \item $\legendre{ab^2}{p} = \legendre{a}{p}$
+            \item $\legendre{1}{p} = 1$, $\legendre{-1}{p} = (-1)^{\frac{p-1}{2}}$
+        \end{enumerate}
+        \begin{proof} [Proof (4)]
+            By Euler's Criterion: 
+            \begin{align*}
+                \legendre{ab}{p}\equiv ab^{\frac{p-1}{2}}\equiv a^{\frac{p-1}{2}}b^{\frac{p-1}{2}}\pmod{p} \\
+                \legendre{ab}{p}\equiv \legendre{a}{p}\legendre{b}{p}\pmod{p}
+            \end{align*}
+            But $\legendre{x}{p}$ only takes values $\pm 1$, so 
+            \[
+                \legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}
+            \]
+        \end{proof}
+    \end{theorem}
+    \begin{corollary}
+        For an odd prime $p$, 
+        \[
+            \legendre{-1}{p} = 
+            \begin{cases}
+                1 \text{ if } p\equiv 1\pmod{4} \\
+                -1 \text{ if } p\equiv 3\pmod{4} 
+            \end{cases}
+        \]
+        \begin{proof}
+            \[
+            \legendre{-1}{p} = (-1)^{\frac{p-1}{2}} = 
+            \begin{cases}
+                1 \text{ if }\frac{p-1}{2} \text{ is even} \\
+                -1 \text{ if }\frac{p-1}{2} \text{ is odd} 
+            \end{cases}
+            = 
+            \begin{cases}
+                1 \text{ if } \frac{p-1}{2}\equiv 0\pmod{2} \\
+                -1 \text{ if } p\equiv 3\pmod{4} 
+            \end{cases}
+        \]
+        \end{proof}
+    \end{corollary}

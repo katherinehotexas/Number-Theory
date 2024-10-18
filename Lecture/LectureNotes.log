@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.27)  15 OCT 2024 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.27)  17 OCT 2024 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -402,27 +402,27 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \c@definition=\count310
 \c@proposition=\count311
 \c@example=\count312
- (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux))
+ (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux) (Lectures/Lecture15.aux))
 \openout1 = `LectureNotes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -477,16 +477,16 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\katie\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 36.
+Package hyperref Info: Link coloring OFF on input line 37.
  (LectureNotes.out) (LectureNotes.out)
 \@outlinefile=\write3
 \openout3 = `LectureNotes.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
  (C:\Users\katie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (C:\Users\katie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -651,7 +651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-<Images/image1.jpg, id=490, 1662.21pt x 1836.8625pt>
+<Images/image1.jpg, id=530, 1662.21pt x 1836.8625pt>
 File: Images/image1.jpg Graphic file (type jpg)
 <use Images/image1.jpg>
 Package pdftex.def Info: Images/image1.jpg  used on input line 62.
@@ -661,7 +661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-<Images/image2.jpg, id=491, 2212.265pt x 2459.1875pt>
+<Images/image2.jpg, id=531, 2212.265pt x 2459.1875pt>
 File: Images/image2.jpg Graphic file (type jpg)
 <use Images/image2.jpg>
 Package pdftex.def Info: Images/image2.jpg  used on input line 64.
@@ -820,23 +820,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--122
 
  []
 
-)
 
-[43]
+
+[43])
+
+[44]
 \openout2 = `Lectures/Lecture13.aux'.
 
  (Lectures/Lecture13.tex
+Chapter 13.
+)
 
-[44
+[45
 
 
 
 
 ]
-Chapter 13.
-)
-
-[45]
 \openout2 = `Lectures/Lecture14.aux'.
 
  (Lectures/Lecture14.tex
@@ -874,26 +874,83 @@ Package mdframed Info: mdframed detected package amsthm
 
 [48])
 
-[49] (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux))
+[49]
+\openout2 = `Lectures/Lecture15.aux'.
+
+ (Lectures/Lecture15.tex
+
+[50
+
+
+
+
+]
+Chapter 15.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mkern' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mkern' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5.
+
+
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+
+[52]
+
+[53])
+
+[54] (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux) (Lectures/Lecture15.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
 Package rerunfilecheck Info: File `LectureNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 6F318E30161196188CA1E257E074CD44;7727.
+(rerunfilecheck)             Checksum: 08F94D1C54FA1998A49BDF31A3F6D8A2;8860.
  ) 
 Here is how much of TeX's memory you used:
- 12681 strings out of 473898
- 207817 string characters out of 5726479
- 1943960 words of memory out of 5000000
- 35054 multiletter control sequences out of 15000+600000
+ 12745 strings out of 473898
+ 209326 string characters out of 5726479
+ 1945960 words of memory out of 5000000
+ 35083 multiletter control sequences out of 15000+600000
  568330 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,11n,93p,1240b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\katie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LectureNotes.pdf (49 pages, 992099 bytes).
+Output written on LectureNotes.pdf (54 pages, 1015945 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 224 named destinations out of 1000 (max. 500000)
- 475 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 849 PDF objects out of 1000 (max. 8388607)
+ 252 named destinations out of 1000 (max. 500000)
+ 539 words of extra memory for PDF output out of 10000 (max. 10000000)
 
