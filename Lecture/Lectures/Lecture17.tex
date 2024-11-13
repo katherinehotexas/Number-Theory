@@ -1,0 +1,222 @@
+\chapter{Lecture 17}
+\date{October 24, 2024}
+
+\section{Last Time: Quadratic Reciprocity}
+    \begin{theorem}
+        $p,q$ are odd primes, then
+        \[
+            \legendre{p}{q}\legendre{q}{p} = (-1)^{\frac{p-1}{2}\frac{q-1}{2}}
+        \]
+    \end{theorem}
+    \begin{theorem}
+        $p,q$ are odd primes, then
+        \begin{itemize}
+            \item \begin{align*}
+                \legendre{p}{q} = 
+                \begin{cases}
+                    \legendre{q}{p} \text{ if } p\equiv 1\pmod{4} \text{ OR } q\equiv 1\pmod{4} \\
+                    \legendre{-q}{p} \text{ if } p\equiv 3\pmod{4} \text{ AND } q\equiv 3\pmod{4}
+                \end{cases}
+            \end{align*}
+            \item \begin{align*}
+                \legendre{-1}{p} = 
+                \begin{cases}
+                    1 \quad p\equiv 1\pmod{4} \\
+                    -1 \quad p\equiv 3\pmod{4}
+                \end{cases}
+            \end{align*}
+            \item \begin{align*}
+                \legendre{2}{p} = 
+                \begin{cases}
+                    1 \quad p\equiv 1,7\pmod{8} \\
+                    -1 \quad p\equiv 3,5\pmod{8}
+                \end{cases}
+            \end{align*}
+        \end{itemize}
+    \end{theorem}
+
+\section{More on quadratic reciprocity}
+    \subsection{Factors of $n^2 - 5$}
+    $f(x) = x^2 - 5\quad\quad f(44) = 1931$
+    \begin{align*}
+        n &\quad f(n) \\
+        1 &\quad -2^2 \\
+        2 &\quad -1 \\
+        3 &\quad 2^2 \\
+        4 &\quad 11 \\
+        5 &\quad 2^2\cdot 5 \\
+        6 &\quad 3\cdot 1 \\
+        7 &\quad 2^2\cdot 11 \\
+        8 &\quad 59 \\
+        9 &\quad 2^2\cdot 19 \\
+        10 &\quad 5\cdot 19 \\
+    \end{align*}
+    No digit $\equiv 3,7$ ever appears. 
+    What is going on? \\
+
+    If an odd prime $p$ divides $n^2 - 5$
+    \begin{align*}
+        \Longleftrightarrow & n^2\equiv 5\pmod{p} \\
+        \Longleftrightarrow & \legendre{5}{p} = 1
+    \end{align*}
+    Since $5\equiv 1\pmod{4}$, we have
+    \[
+        1=\legendre{5}{p} = \legendre{p}{5} = 
+        \begin{cases}
+            1 \quad p\equiv 1,4\pmod{5} \\
+            -1 \quad p\equiv 2,3\pmod{5}
+        \end{cases}
+    \]
+    if $p\equiv 2\pmod{5}$, then $p\not\equiv 2\pmod{10}$ (p is odd) or $p\equiv 7\pmod{10}$. \\
+    if $p\equiv 3\pmod{5}$, then $p\not\equiv 3\pmod{10}$ or $p\not\equiv\gamma\pmod{10}$. \\
+    
+    \[
+        \legendre{14137}{30013} = \legendre{67}{30013}\legendre{211}{30013}
+    \]
+    Can we do this without factoring? YES. \\
+
+    \subsection{Jacobi Symbol}
+    \begin{definition}
+        Let $n$ be an odd integer with $n = p_1^{e_1}\dots p_r^{e_r}$ 
+        and let $a\in\ZZ$ with $\gcd(a,n) = 1$. Define the \underline{Jacobi symbol} by
+        \[
+            \legendre{a}{n} = \legendre{a}{p_1}^{e_1}\legendre{a}{p_2}^{e_2}\dots \legendre{a}{p_r}^{e_r}
+        \]
+        where $\legendre{a}{p_i}$ is a Legendre symbol. \\       
+    \end{definition}
+
+    \underline{Notes}: 
+        \begin{itemize}
+            \item If $n$ is an odd prime, then the Jacobi symbol is the same 
+            as Legendre.
+            \item The "denominator" in $\legendre{a}{n}$ must always be odd. 
+            \item If it is ever even in a computation, something has gone wrong.
+            \item If $\legendre{a}{n} = 1$, that does not imply that $a$ is QR of $n$. 
+                  But if $\legendre{a}{n} = -1$, then $a$ is NR of $n$. \\
+        \end{itemize}
+    
+    \begin{example}
+        $a=2,n=9$. Note 2 is not a square $\pmod{9}$. \\
+        But $\legendre{2}{9} = \legendre{2}{3}^2 = 1$. \\
+        In fact $\legendre{a}{9} = \legendre{a}{3}^2 = 1$
+        for all $a$ coprime. \\
+    \end{example}
+
+    \subsection{General Quadratic Reciprocity}
+    \begin{theorem} [General Quadratic Reciprocity]
+        Let $a$ and $b$ be odd positive integers. then, 
+        \begin{itemize}
+            \item 
+            \[
+                \legendre{-1}{b} = 
+                \begin{cases}
+                    1 \quad b\equiv 1\pmod{4} \\
+                    -1 \quad b\equiv 3\pmod{4}
+                \end{cases}
+            \]
+            \item 
+            \[
+                \legendre{2}{b} = 
+                \begin{cases}
+                    1 \quad b\equiv 1,7\pmod{8} \\
+                    -1 \quad b\equiv 3,5\pmod{8}
+                \end{cases}
+            \]
+            \item 
+            \[
+                \legendre{a}{b}\legendre{b}{a} = (-1)^{\frac{a-1}{2}\frac{b-1}{2}}, \legendre{a}{b} =  
+                \begin{cases}
+                    \legendre{b}{a} \quad a\equiv 1\pmod{4} \text{ OR } b\equiv 1\pmod{4} \\
+                    -\legendre{b}{a} \quad a\equiv 3\pmod{4} \text{ AND } b\equiv 3\pmod{4} \\
+                \end{cases}
+            \]
+        \end{itemize}
+    \end{theorem}
+
+    Back to: 
+    \[
+        \legendre{14137}{30013} = \legendre{67}{30013}\legendre{211}{30013}
+    \]
+    \begin{align*}
+        \legendre{14137}{30013} = \legendre{30013}{14137} = \legendre{1739}{14137}  \\
+        \legendre{14137}{1739} = \legendre{225}{1739} = \legendre{1739}{225} = \legendre{164}{225}
+    \end{align*}
+    \textbf{WARNING}: You must factor out powers of 2.
+    \begin{align*}
+        &= \legendre{2^2\cdot 41}{225} = \legendre{41}{225} = \legendre{225}{41} \\ 
+        &= \legendre{20}{41} = \legendre{2^2\cdot 5}{41} = \legendre{5}{41} \\
+        &= \legendre{41}{5} = \legendre{1}{5} = 1
+    \end{align*}
+
+    \begin{example}
+        \begin{align*}
+            \legendre{22}{33} = \legendre{2\cdot 11}{33} \\
+            = \legendre{2}{33}\legendre{11}{33}
+        \end{align*}
+        then use above property for $\legendre{2}{b}$
+    \end{example}
+
+    \subsection{Solovay-Strassen Primality Test}
+    Let $a\in\{1,\dots,n-1\}$ coprime to $n$. 
+    \[
+        \text{If } a^{\frac{n-1}{2}} \not\equiv\legendre{a}{n}\pmod{n} \quad\text{then n is composite.}
+    \]
+    \textbf{WARNING}: If $a^{\frac{n-1}{2}}\equiv \legendre{a}{n}\pmod{n}$, 
+    you \underline{cannot} conclude $n$ is prime. \\
+    
+    \subsection{Another primality test?}
+    \begin{theorem}
+        If $n>1$ is composite, then at least half of the integers
+        $\{1,\dots,n-1\}$ satisfy 
+        \[
+            a^{\frac{n-1}{2}} \not\equiv \legendre{a}{n}\pmod{n} \\
+        \]
+    \end{theorem}
+
+    \begin{example}
+        Let's prove $n=9$ is composite. 
+        Choose $a=2$
+        \[
+            2^{\frac{n-1}{2}} = 2^4 = 16 \equiv 17\pmod{9}
+        \]
+        We are done since $\legendre{2}{9} = \pm 1$. So 9 is composite. \\
+    \end{example}
+    
+    \subsection{Polynomials}
+    Q: Let $f(x) = ax^2+bx+c, a,b,c\in\ZZ$. 
+    When does $f(x) = ax^2+bx+c\equiv 0\pmod{p}$ where $\gcd(a,p)=1$ have a solution?
+    Complete the square. \\
+    Note since $p$ is an odd prime and $\gcd(a,p) = 1$, we have $\gcd(4a,p) = 1$.
+    So then $ax^2+bx+c\equiv 0\pmod{p}$ is equivalent to 
+    $4a(ax^2+bx+c) \equiv 0 \pmod{p}$. \\
+    Now complete the square:
+    \[
+        4a(ax^2+bx+c) = (2ax+b)^2 - (b^2-4ac)
+    \]
+    $4a(ax^2+bx+c)\equiv 0\pmod{p}$ is equivalent to 
+    \begin{align*}
+        (2ax+b)^2 - (b^2-4ac)\equiv 0\pmod{p} \\
+        (2ax+b)^2\equiv b^2-4ac\pmod{p}
+    \end{align*}
+    Let $y = 2ax+b$
+    \[
+        y^2\equiv b^2-4ac\pmod{p}
+    \]
+
+    \subsection{Application: Primitive Roots}
+    \begin{theorem}
+        Suppose $p$ and $q=2p+1$ are odd primes. then
+        \[
+            g= (-1)^{\frac{p-1}{2}}2 \quad\text{is a primitive root of $q$.}
+        \]
+        \begin{proof}
+            $\ord_q(g)\mid q-1 = 2p$ 
+            $\Longrightarrow \ord_q(g) = 1,2,p,\text{ or }2p$
+        \end{proof}
+        Show that $\ord_q(g)$ is not $p$ by considering $g^p\pmod{q}$. \\
+        Cases: $p\equiv 1\pmod{4}$, then $g=2$. So we look at does $g^p=2^p\equiv 1\pmod{q}$? \\
+        Rewrite as 
+        \[2^p = 2^{\frac{q-1}{2}}\equiv\legendre{2}{q}\pmod{q}\] 
+        Claim: If $p\equiv 1\pmod{4}$, then $\legendre{2}{2p+1} = -1$. \\
+        If $p\equiv 3\pmod{4}, g^p = (-2)^{\frac{q-1}{2}}\equiv \legendre{-2}{2p+11}\equiv\legendre{-1}{2p+1}\legendre{2}{2p+1}\pmod{q}$
+    \end{theorem}

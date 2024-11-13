@@ -1,66 +1,112 @@
-\contentsline {chapter}{\numberline {1}Lecture 1}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Open Problems}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Notation}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Divisibility}{5}{section.1.3}%
-\contentsline {section}{\numberline {1.4}The Division Algorithm}{6}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Lecture 2}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Proof by Contradiction}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Proof by Induction}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Well Ordering Principle (WOP)}{8}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Lecture 3}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Problem - Diophantine Equations}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Bezout's Theorem}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Euclidean Algorithm}{12}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Lecture 4}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Bezout, Euclid's Lemma}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Prime Numbers}{15}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Lecture 5}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Modular Congruences}{17}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Congruences with Unknowns}{19}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Lecture 6}{21}{chapter.6}%
-\contentsline {section}{\numberline {6.1}From Last Time}{21}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Solving stuff}{21}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Lecture 7}{25}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Last Time}{25}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Multiplicative Inverse}{25}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Stuff}{26}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Fermat's Little Theorem}{27}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Example}{27}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Primality Test}{27}{subsection.7.3.3}%
-\contentsline {chapter}{\numberline {8}Lecture 8}{29}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Last Time}{29}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Fermat's Little Theorem}{29}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}Generalization to composite modulus}{29}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Euler Totient Function (Euler's Phi Function)}{29}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Euler's Theorem}{30}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}More on $\phi $}{30}{subsection.8.2.3}%
-\contentsline {subsection}{\numberline {8.2.4}Chinese Remainder Theorem}{31}{subsection.8.2.4}%
-\contentsline {chapter}{\numberline {9}Lecture 9}{33}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Last Time}{33}{section.9.1}%
-\contentsline {chapter}{\numberline {10}Lecture 10}{35}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Some more properties of primes}{35}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Wilson's Theorem}{36}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Review}{37}{section.10.3}%
-\contentsline {chapter}{\numberline {11}Lecture 11}{39}{chapter.11}%
-\contentsline {section}{\numberline {11.1}}{39}{section.11.1}%
-\contentsline {chapter}{\numberline {12}Lecture 12}{41}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Miscellaneous}{41}{section.12.1}%
-\contentsline {subsection}{\numberline {12.1.1}Least Common Multiple}{41}{subsection.12.1.1}%
-\contentsline {subsection}{\numberline {12.1.2}More about $\phi $ (and number-theoretic functions)}{41}{subsection.12.1.2}%
-\contentsline {subsection}{\numberline {12.1.3}Lagrange's Theorem}{43}{subsection.12.1.3}%
-\contentsline {section}{\numberline {12.2}Order}{43}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}}{43}{subsection.12.2.1}%
-\contentsline {chapter}{\numberline {13}Lecture 13}{45}{chapter.13}%
-\contentsline {section}{\numberline {13.1}}{45}{section.13.1}%
-\contentsline {chapter}{\numberline {14}Lecture 14}{47}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Recap}{47}{section.14.1}%
-\contentsline {section}{\numberline {14.2}All primes have a primitive root}{47}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Index}{48}{section.14.3}%
-\contentsline {chapter}{\numberline {15}Lecture 15}{51}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Recall}{51}{section.15.1}%
-\contentsline {subsection}{\numberline {15.1.1}Indices $\pmod {p}$ relative to a primitive root $g$}{51}{subsection.15.1.1}%
-\contentsline {subsection}{\numberline {15.1.2}}{51}{subsection.15.1.2}%
-\contentsline {section}{\numberline {15.2}Quadratic Residue}{52}{section.15.2}%
-\contentsline {subsection}{\numberline {15.2.1}Quadratic Residue}{52}{subsection.15.2.1}%
-\contentsline {subsection}{\numberline {15.2.2}Euler's Criterion}{52}{subsection.15.2.2}%
-\contentsline {section}{\numberline {15.3}Legendre}{53}{section.15.3}%
+\contentsline {chapter}{\numberline {1}Lecture 1}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Open Problems}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Notation}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Divisibility}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}The Division Algorithm}{8}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Lecture 2}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Proof by Contradiction}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Proof by Induction}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Well Ordering Principle (WOP)}{10}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Lecture 3}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem - Diophantine Equations}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Bezout's Theorem}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Euclidean Algorithm}{14}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Lecture 4}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Bezout, Euclid's Lemma}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Prime Numbers}{17}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Lecture 5}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modular Congruences}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Congruences with Unknowns}{21}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Lecture 6}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}From Last Time}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Solving stuff}{23}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Lecture 7}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Last Time}{27}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Multiplicative Inverse}{27}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Stuff}{28}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Fermat's Little Theorem}{29}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Example}{29}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Primality Test}{29}{subsection.7.3.3}%
+\contentsline {chapter}{\numberline {8}Lecture 8}{31}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Last Time}{31}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Fermat's Little Theorem}{31}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Generalization to composite modulus}{31}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Euler Totient Function (Euler's Phi Function)}{31}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Euler's Theorem}{32}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}More on $\phi $}{32}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.4}Chinese Remainder Theorem}{33}{subsection.8.2.4}%
+\contentsline {chapter}{\numberline {9}Lecture 9}{35}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Last Time}{35}{section.9.1}%
+\contentsline {chapter}{\numberline {10}Lecture 10}{37}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Some more properties of primes}{37}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Wilson's Theorem}{38}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Review}{39}{section.10.3}%
+\contentsline {chapter}{\numberline {11}Lecture 11}{41}{chapter.11}%
+\contentsline {section}{\numberline {11.1}}{41}{section.11.1}%
+\contentsline {chapter}{\numberline {12}Lecture 12}{43}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Miscellaneous}{43}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Least Common Multiple}{43}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}More about $\phi $ (and number-theoretic functions)}{43}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}Lagrange's Theorem}{45}{subsection.12.1.3}%
+\contentsline {section}{\numberline {12.2}Order}{45}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}}{45}{subsection.12.2.1}%
+\contentsline {chapter}{\numberline {13}Lecture 13}{47}{chapter.13}%
+\contentsline {section}{\numberline {13.1}}{47}{section.13.1}%
+\contentsline {chapter}{\numberline {14}Lecture 14}{49}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Recap}{49}{section.14.1}%
+\contentsline {section}{\numberline {14.2}All primes have a primitive root}{49}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Index}{50}{section.14.3}%
+\contentsline {chapter}{\numberline {15}Lecture 15}{53}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Recall}{53}{section.15.1}%
+\contentsline {subsection}{\numberline {15.1.1}Indices $\pmod {p}$ relative to a primitive root $g$}{53}{subsection.15.1.1}%
+\contentsline {subsection}{\numberline {15.1.2}}{53}{subsection.15.1.2}%
+\contentsline {section}{\numberline {15.2}Quadratic Residue}{54}{section.15.2}%
+\contentsline {subsection}{\numberline {15.2.1}Quadratic Residue}{54}{subsection.15.2.1}%
+\contentsline {subsection}{\numberline {15.2.2}Euler's Criterion}{54}{subsection.15.2.2}%
+\contentsline {section}{\numberline {15.3}Legendre}{55}{section.15.3}%
+\contentsline {chapter}{\numberline {16}Lecture 16}{57}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Last Time}{57}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Legendre Properties}{57}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Infinite Primes}{58}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Gauss' Lemma}{58}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Quadratic Reciprocity}{59}{section.16.5}%
+\contentsline {chapter}{\numberline {17}Lecture 17}{61}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Last Time: Quadratic Reciprocity}{61}{section.17.1}%
+\contentsline {section}{\numberline {17.2}More on quadratic reciprocity}{62}{section.17.2}%
+\contentsline {subsection}{\numberline {17.2.1}Factors of $n^2 - 5$}{62}{subsection.17.2.1}%
+\contentsline {subsection}{\numberline {17.2.2}Jacobi Symbol}{62}{subsection.17.2.2}%
+\contentsline {subsection}{\numberline {17.2.3}General Quadratic Reciprocity}{63}{subsection.17.2.3}%
+\contentsline {subsection}{\numberline {17.2.4}Solovay-Strassen Primality Test}{64}{subsection.17.2.4}%
+\contentsline {subsection}{\numberline {17.2.5}Another primality test?}{64}{subsection.17.2.5}%
+\contentsline {subsection}{\numberline {17.2.6}Polynomials}{64}{subsection.17.2.6}%
+\contentsline {subsection}{\numberline {17.2.7}Application: Primitive Roots}{64}{subsection.17.2.7}%
+\contentsline {chapter}{\numberline {18}Lecture 18}{65}{chapter.18}%
+\contentsline {section}{\numberline {18.1}(Incomplete)}{65}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Number Theory of Complex Numbers}{65}{section.18.2}%
+\contentsline {subsection}{\numberline {18.2.1}Complex Numbers}{65}{subsection.18.2.1}%
+\contentsline {subsection}{\numberline {18.2.2}Algebraic Geometric}{66}{subsection.18.2.2}%
+\contentsline {subsection}{\numberline {18.2.3}Number Theory}{67}{subsection.18.2.3}%
+\contentsline {chapter}{\numberline {19}Lecture 19}{69}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Exam Review}{69}{section.19.1}%
+\contentsline {subsection}{\numberline {19.1.1}HW7 Q4}{69}{subsection.19.1.1}%
+\contentsline {subsection}{\numberline {19.1.2}Determine congruence conditions for $\ensuremath {\left ( \frac {-5}{p} \right ) }=1$}{69}{subsection.19.1.2}%
+\contentsline {section}{\numberline {19.2}Last Time: Complex Numbers}{70}{section.19.2}%
+\contentsline {subsection}{\numberline {19.2.1}Gaussian Integers}{70}{subsection.19.2.1}%
+\contentsline {section}{\numberline {19.3}Units}{70}{section.19.3}%
+\contentsline {subsection}{\numberline {19.3.1}Back to units}{71}{subsection.19.3.1}%
+\contentsline {section}{\numberline {19.4}Sum of 2 Squares}{71}{section.19.4}%
+\contentsline {chapter}{\numberline {20}Lecture 20}{73}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Last Time}{73}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Sum of 2 Squares}{73}{section.20.2}%
+\contentsline {subsection}{\numberline {20.2.1}Fermat's Method of Infinite Descent}{73}{subsection.20.2.1}%
+\contentsline {subsection}{\numberline {20.2.2}Example}{74}{subsection.20.2.2}%
+\contentsline {section}{\numberline {20.3}Gaussian Integers}{74}{section.20.3}%
+\contentsline {subsection}{\numberline {20.3.1}When is $a+bi\in \mathbb {Z}[i]$?}{74}{subsection.20.3.1}%
+\contentsline {chapter}{\numberline {21}Lecture 21}{77}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Midterm 2}{77}{section.21.1}%
+\contentsline {subsection}{\numberline {21.1.1}Question 1}{77}{subsection.21.1.1}%
+\contentsline {subsection}{\numberline {21.1.2}Congruence solutions for $\ensuremath {\left ( \frac {3}{p} \right ) }$}{77}{subsection.21.1.2}%
+\contentsline {subsection}{\numberline {21.1.3}$p,q=2p+1$ odd primes}{77}{subsection.21.1.3}%
+\contentsline {subsection}{\numberline {21.1.4}}{78}{subsection.21.1.4}%
+\contentsline {section}{\numberline {21.2}Cryptography Stuff}{78}{section.21.2}%
+\contentsline {subsection}{\numberline {21.2.1}Remote Coin Flipping}{78}{subsection.21.2.1}%

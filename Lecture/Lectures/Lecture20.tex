@@ -1,0 +1,142 @@
+\chapter{Lecture 20}
+\date{November 7, 2024}
+
+\section{Last Time}
+    Which primes can be written as the sum of 2 squares?
+    Ans: $p=2, p\equiv 1\pmod{4}$ \\
+    If $p$ is odd prime and $p=a^2 + b^2$ for some $a,b\in\ZZ$, 
+    then $a^2\equiv -b^2\pmod{p}$
+    \begin{align*}
+        \legendre{a^2}{p} &= \legendre{b^2}{p} = \legendre{-1}{p}\legendre{b^2}{p} \\
+        1 &= \legendre{-1}{p}\longrightarrow p\equiv 1\pmod{4}
+    \end{align*}
+
+\section{Sum of 2 Squares}
+    Now suppose $p\equiv 1\pmod{4}$ want to write $p$ as a sum of 2 squares.
+    Use 
+    \[
+        (u^2+v^2)(A^2+B^2) = (uA+vB)^2 + (vA+uB)^2
+    \]
+
+    \subsection{Fermat's Method of Infinite Descent}
+    Since $p\equiv 1\pmod{4}$, we have $\legendre{-1}{p} = 1$ \\
+    ie. $x^2\equiv -1\pmod{p}$ has a solution.
+    ie. $x^2+1=kp$ for some $k\in\ZZ$ \\
+    .$\quad x^2+1^2=kp$ is a sum of squares
+
+    Suppose now that $A^2+B^2=Mp$. We will conduct a smaller multiple of $p$ 
+    that is a sum of squares.
+
+    Find integers $u,v$ susch that
+    \begin{align*}
+        u\equiv A\pmod{M} \\
+        v\equiv B\pmod{M}
+    \end{align*}
+    so that 
+    \[
+        -\frac{1}{2}M \le u,v \le \frac{1}{2}M
+    \]
+    Thus $A^2+B^2\equiv u^2+v^2\equiv 0\pmod{M}$ \\
+    Thus 
+    \begin{align*}
+        A^2+B^2 = Mp \\
+        u^2 + v^2 = Mp
+    \end{align*}
+    Then 
+    \begin{align*}
+        (A^2+B^2)(u^2+v^2) = M^2rp \\
+        (uA+vB)^2+(rA-uB)^2 = M^2rp \\
+        uA+vB\equiv AA + BB \equiv A^2rB^2\equiv 0\pmod{M} \\
+        vA-uB\equiv BA - AB\equiv 0\pmod{M} \\
+        (\frac{uA+vB}{M})^2 + (\frac{vA-uB}{M})^2 = rp 
+    \end{align*}
+
+    \subsection{Example}
+    Choose $p=13$. 
+    \[
+        \legendre{-1}{13} = 1 \rightarrow x^2+1=k\cdot 13 \rightarrow x=5,k=2
+    \]
+    \begin{align*}
+        5^2+1^2 = 2\cdot 13 \\
+        5\equiv 1\pmod{2} \\
+        1\equiv 1\pmod{2} \\
+        1^2+1^2 = 2\cdot 2
+    \end{align*}
+    \begin{align*}
+        (5^2+1^2)(1^2+1^2) = 2^2 \cdot 1\cdot 13 \\
+        (5+1)^2 + (5-1)^2 = 2^2\cdot 13 \\
+        \frac{5+1}{2}^2 + \frac{5-1}{2}^2 = 13 \\
+        3^2 + 2^2 = 13
+    \end{align*}
+        
+\section{Gaussian Integers}
+    \[
+        \ZZ[i] = \{ a+bi\mid a,b\in\ZZ \}
+    \]
+    Primes sometimes factor in $\ZZ[i]$. \\
+    eg. $5=(1+2i)(1-2i)$ but 3 is "prime" in $\ZZ[i]$ 
+
+    Suppose $p\equiv 1\pmod{4}$. Then $p$ can be written as $p=a^2+b^2$
+    for some $a,b\in\ZZ$ But then 
+    \[
+        p=a^2+b^2 = (a+bi)(a-bi)
+    \]
+    \underline{Claim}: Neither $a+bi$ nor $a-bi$ is a unit in $\ZZ[i] (1,-1,i,-i)$.
+    Hence $p$ is composite in $\ZZ[i]$. 
+
+    \subsection{When is $a+bi\in\ZZ[i]$?}
+    Prime is a Gaussian integer?
+    
+    Ex: $\alpha = 1+2i$ is prime. \\
+    Suppose $\alpha = 1+2i = (a+bi)(c+di)$ \\
+    Could write out (ac-bd)+(bc+ad)i \\
+
+    Another way? Use $N(a+bi) = a^2+b^2$. 
+    Then 
+    \begin{align*}
+        N(1+2i) = N(c+bi)N(c+di) \\
+        N = (a^2+b^2)(c^2+d^2)
+    \end{align*}
+    WLOG
+    \begin{align*}
+        a^2+b^2 = 1 \rightarrow (a,b) = 
+        \begin{cases}
+            (1,0),(ai) \\
+            (-1,0),(a-i)
+        \end{cases}
+        \Longleftrightarrow a+bi = 
+        \begin{cases}
+            1, -1, \\
+            i, -i
+        \end{cases}
+    \end{align*}
+
+    \begin{corollary}
+        If $N(a+bi) = a^2+b^2$ is prime, then $a+bi$ is prime in $\ZZ[i]$
+    \end{corollary}
+
+    \begin{theorem} [Gaussian Primes]
+        Let $\alpha = a+bi$.
+        \begin{enumerate}
+            \item If $\alpha\in\ZZ (b=0)$, then $\alpha$ is prime in $\ZZ[i]$ 
+            iff $\alpha = p$ is an odd prime with $p\equiv 3\pmod{4}$. 
+            \item If $\alpha\in i\ZZ$ then $\alpha$ is $\dots \alpha = ip \dots p\equiv 3\pmod{4}$
+            \item If both $a$ and $b$ are nonzero, then $\alpha$ is prime in $\ZZ[i]$ iff $N(\alpha)$ is a prime in $\ZZ$. 
+        \end{enumerate}
+        Ex. of 3: Suppose $N(\alpha)$ is even so $2\mid N(2)$. 
+        Claim: $(1+i)\mid\alpha$
+        \begin{proof}
+            WTS 
+            \[
+                \frac{a+bi}{1+i} \in\ZZ[i]
+            \]
+            \begin{align*}
+                \frac{a+bi}{1+i}\frac{1-i}{1-i} = \frac{(a+b)+(b-a)i}{2}
+            \end{align*}
+            Since $a^2+b^2$ is even, $a,b$ are both even or both odd.
+            So $a+b$ and $b-a$ are both even.
+
+            So \[ \frac{a+bi}{a+i} = \frac{a+b}{2} + \frac{b-a}{2}i \in\ZZ[i] \]
+            So, $(1+i\mid (a+bi))$.
+        \end{proof}
+    \end{theorem}

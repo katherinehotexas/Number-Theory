@@ -1,0 +1,161 @@
+\chapter{Lecture 16}
+\date{October 22, 2024}
+
+\section{Last Time}
+    Legendre Symbol, $p$ odd prime, $p\nmid a$
+    \[
+        \legendre{ab}{p} = 
+        \begin{cases}
+            1 \text{ if } a \text{ is OR} \\
+            -1 \text{ if } a \text{ is NR}  
+        \end{cases}
+    \]
+\section{Legendre Properties}
+    \begin{enumerate}
+        \item $a\equiv b\pmod{p} \rightarrow \legendre{a}{p} = \legendre{b}{p}$
+        \item $\legendre{a}{p^2} = 1$
+        \item $\legendre{a}{p}\equiv a^{\frac{p-1}{2}}\pmod{p}$
+        \item $\legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}$
+        \item $\legendre{ab^2}{p} = \legendre{a}{p}$
+        \item $\legendre{1}{p} = 1$, $\legendre{-1}{p} = (-1)^{\frac{p-1}{2}}$
+    \end{enumerate}
+    \begin{proof} [Proof (6)]
+        \begin{align*}
+            \legendre{-1}{p} &\equiv (-1)^{\frac{p-1}{2}}\pmod{p} \\
+            &= \begin{cases}
+                1 \text{ if }\frac{p-1}{2} \text{ is even} \\
+                -1 \text{ if }\frac{p-1}{2} \text{ is odd} 
+            \end{cases} \\
+            &= \begin{cases}
+                1 \text{ if } p-1\equiv 0\pmod{4} \\
+                -1 \text{ if }p-1\not\equiv 0\pmod{4}
+            \end{cases} \\
+            & p\equiv 3\pmod{4} \text{ since } p \text{ is odd.}
+        \end{align*}
+    \end{proof}
+    
+\section{Infinite Primes}
+    \begin{theorem}
+        There exist infinitely many primes of the form $4k+1$. 
+        \begin{proof}
+            Let $p_1,\dots,p_r$ be a finite set of primes s.t.
+            $p_i\equiv 1\pmod{4}\quad\forall i$. \\
+            Consider $N=(2p_1p_2\dots p_r)^2+1$.
+            Let $p$ be an odd prime dividing N. Note $p\ne p_i$ 
+            for any $i$, otherwise $p\mid(N-(2p_1\dots p_r)^2)=1$.
+            But since $p\mid((2p_1p_2\dots p_r)^2+1)$, we have
+            \[
+                (2p_1p_2\dots p_r)^2\equiv -1\pmod{p}
+            \]
+            ie. $\legendre{-1}{p}=1$, so $p\equiv 1\pmod{4}$.
+            So we have constructed another prime $\equiv 1\pmod{4}$
+            not in the original list.
+            All integers of the form $4k+1$ for an arithmetic progression
+            $1,5,9,13,\dots$
+
+        \end{proof}
+    \end{theorem}
+
+    \begin{theorem} [Dirichlet]
+        Any arithmetic progression $a,a+k,a+2k,\dots$ contains
+        infinitely many primes $(\gcd(a,k)=1)$
+    \end{theorem}
+
+\section{Gauss' Lemma}
+    \begin{theorem} [Gauss' Lemma]
+        Let $p$ be an odd prime and $\gcd(a,p)=1$.
+        Let 
+        \begin{align*}
+            \gamma(a,p)=\gamma(a) &= \\
+            &\# \text{ of integers in the } a,2a,3a,\dots\frac{p-1}{2}a \\
+            &\text{ that become negative when reduced $\pmod{p}$ into the interval} \\
+            &\{ -\frac{p-1}{2},\frac{p-1}{2} \}
+        \end{align*}
+        Then $\legendre{a}{p} = (-1)^{\gamma(a,p)}$.
+        \begin{proof}
+            After reducing $\pmod{p}$ to lie in the interval $\{ -\frac{p-1}{2},\frac{p-1}{2} \}$,
+            let $r_1,\dots,r_m$ be the negative integers $t_1,\dots,t_n$ be 
+            the positive integers.
+            Since $r_1,\dots,r_m,t_1,\dots,t_n$ are congruent to $a,2a,3a,\dots,\frac{p-1}{2}a$,
+            we have 
+            \begin{align*}
+                r_1r_2\dots r_mt_1t_2\dots t_n &\equiv a\cdot 2a\dots\frac{p-1}{2}a\pmod{p} \\
+                (-1)^m(-r_1)\dots(-r_m)t_1\dots t_n &\equiv a^{\frac{p-1}{2}}(\frac{p-1}{2})!\pmod{p} \\
+                (-1)^m(\frac{p-1}{2})! &\equiv a^{\frac{p-1}{2}}(\frac{p-1}{2})!\pmod{p} \\
+                (-1)^m &\equiv a^{\frac{p-1}{2}}\pmod{p} \\
+                (-1)^m &\equiv \legendre{a}{p}\pmod{p}
+            \end{align*}
+            But by definition, $m=\gamma(a,p)$. 
+            So
+            \[
+                (-1)^{\gamma(a,p)} = \legendre{a}{p}
+            \]
+        \end{proof}
+    \end{theorem}
+
+    \begin{theorem}
+        Let $p$ be an odd prime. Then
+        \[
+            \legendre{2}{p} = 
+            \begin{cases}
+                1 \text{ if } p\equiv 1 \text{ or } 7\pmod{8} \\
+                1 \text{ if } p\equiv 3 \text{ or } 5\pmod{8}
+            \end{cases}
+        \]
+        \begin{proof}
+            Apply Gauss' Lemma to the list $2,4,\dots,2\cdot\frac{p-1}{2}$.
+            Then $\gamma(a)$ is the \# of integers $k, 1\le k\le \frac{p-1}{2}$
+            such that $2k > \frac{p-1}{2}$.
+            \[
+                \frac{p-1}{2} < 2k \Longleftrightarrow \frac{p-1}{4} < k \le\frac{p-1}{2}
+            \]
+            \# being odd or even depends only on $p\pmod{8}$.
+        \end{proof}
+    \end{theorem}
+
+\section{Quadratic Reciprocity}
+    \begin{theorem} [Quadratic Reciprocity]
+        Let $p$ and $q$ be odd primes. Then
+        \[
+            \legendre{p}{q}\legendre{q}{p} = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}
+        \]
+    \end{theorem}
+    \begin{theorem} [Computational version]
+        $p,q$ are odd primes.
+        \begin{enumerate}
+            \item 
+                \begin{align*}
+                    \legendre{-1}{p} = 
+                    \begin{cases}
+                        1 \quad p\equiv 1\pmod{4} \\
+                        -1 \quad p\equiv 3\pmod{4}
+                    \end{cases}
+                \end{align*}
+            \item 
+                \begin{align*}
+                    \legendre{2}{p} = 
+                    \begin{cases}
+                        1 \quad p\equiv 1,7\pmod{8} \\
+                        -1 \quad p\equiv 3,5\pmod{8}
+                    \end{cases}
+                \end{align*}
+            \item $\legendre{p}{1}=\legendre{q}{p}$ except whenever both
+            $p$ and $q$ are $\equiv 3\pmod{4}$, in which case 
+            $\legendre{p}{q} = -\legendre{q}{p}$
+        \end{enumerate}
+    \end{theorem}
+    Q: Is 14137 a square $\pmod{30013}$?
+    \[
+        \legendre{14137}{30013} = \legendre{67\cdot 211}{30013}
+        = \legendre{67}{30013}\cdot\legendre{211}{30013}
+    \]
+    \begin{align*}
+        \legendre{67}{30013} = \legendre{30013}{67} = \legendre{64}{67}
+        = \legendre{2^6}{67} = \legendre{{2^3}^2}{67} = 1
+    \end{align*}
+    \begin{align*}
+        \legendre{211}{30013} = \legendre{30013}{211} = \legendre{51}{211}
+        = \legendre{3}{211}\cdot\legendre{17}{211} \\
+        \legendre{3}{211} = -\legendre{211}{3} \equiv -\legendre{1}{3} = -1 \\
+        \legendre{17}{211} = \legendre{211}{17} = \legendre{7}{17} = \legendre{17}{7} = \legendre{3}{7} = -1
+    \end{align*}

@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+
+\usepackage[Glenn]{fncychap}
+% Sonny Lenny Glenn Conny Rejne Bjarne Bjornstrup
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ord}{\operatorname{ord}}
+
+\newcommand{\leg}[2]{\genfrac(){}{0}{#1}{#2}}
+\newcommand{\legp}[1]{\leg{#1}{p}}
+
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+
+\title{Homework 9}
+\author{Due: 11/19 11:00am}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item Let $p$ be an odd prime with $p\equiv 5\pmod{8}$. Find an explicit solution to the congruence $x^2 \equiv -1 \pmod p$. (Hint: You know $(2/p) = -1$. Apply Euler's criterion.)
+
+    \item \begin{enumerate}
+        \item Use the previous problem to find a solution $x$ to the congruence $x^2 \equiv -1 \pmod{541}$. (Reduce modulo $p$ so that $0<x<541$)
+        \item Use part (a) to express a multiple of $541$ as a sum of squares.
+        \item Use Fermat's method of descent to express $541$ as a sum of squares.
+    \end{enumerate}
+
+    \item Let $\alpha = a + bi$ be a Gaussian integer. Show that if $N(\alpha) = a^2 + b^2$ is divisible by an odd prime $p$ with $p\equiv 3 \pmod 4$, then both $a$ and $b$ are divisible by $p$.
+    
+    (Hint: By contradiction, assume $a$ and $b$ are not divisible by $p$. Then the Legendre symbols $\legp{a}$ and $\legp{b}$ are well-defined. Now derive a contradiction.)
+
+    \item Show how to factor $27007$ if you know both $885$ and $7816$ are square roots of $22$ modulo $27007$.
+
+    \item Find the four incongruent solutions of the quadratic congruence $x^2 \equiv 30 \Mod{133}$.
+
+    \item We have seen that any prime of the form $p = 4k+1$ can be expressed as a sum of two squares. Prove that this representation is unique (except for swapping the order of the two summands).
+
+    (Hint: Suppose that $p = a^2 + b^2 = c^2 + d^2$, where $a,b,c,d$ are all positive integers. First argue that $a^2d^2 \equiv b^2 c^2 \Mod p$, so then $ad \equiv bc \Mod p$ or $ad \equiv -bc \Mod p$. Next, argue that these two cases imply, respectively, that $ad - bc = 0$ or $ad + bc = p$. If $ad + bc = p$, use the product formula to write $p^2$ as a sum of squares and then use the resulting equation to conclude $ac - bd = 0$. Thus, it follows that either $ad = bc$ or $ac = bd$. Now draw the rest of the owl.)
+
+    
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+
+\usepackage[Glenn]{fncychap}
+% Sonny Lenny Glenn Conny Rejne Bjarne Bjornstrup
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ord}{\operatorname{ord}}
+
+\newcommand{\leg}[2]{\genfrac(){}{0}{#1}{#2}}
+\newcommand{\legp}[1]{\leg{#1}{p}}
+
+\newcommand{\legendre}[2]{\ensuremath{\left( \frac{#1}{#2} \right) }}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+
+\title{M328K: Homework 8}
+\author{Katherine Ho}
+\date\today
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item Let $n>1$ be odd and let $\gcd(a,n)=1$. Show that if $a$ is a quadratic residue of $n$, then the Jacobi symbol satisfies $\leg{a}{n} = 1.$ Give a counterexample to show that the converse is false.
+    \begin{proof}
+        If $a$ is a QR of $n$, then $x^2\equiv a\pmod{n}$ has a solution.
+        Then, $x^2\equiv a\pmod{p_i}$ has a solution for every prime factor $p_i$ of $n$. 
+        By definition of the Legendre symbol, 
+        \[
+            \legendre{a}{p_i} = 1
+        \]
+        for each prime factor $p_i$ of $n$.
+        Then the product of the Legendre symbols for each $p_i$ is
+        \[
+            \legendre{a}{n} = \legendre{a}{p_1} \dots \legendre{a}{p_k} = 1
+        \]
+        Thus if $a$ is a quadratic residue of $n$, then the Jacobi symbol satisfies $\leg{a}{n} = 1.$ \\
+    \end{proof}
+
+        A counterexample is $a=2$ and $n=9$. 
+        The Jacobi symbol satisfies $\legendre{2}{9} = 1$:
+        \[
+            \legendre{2}{9} = \legendre{2}{3}\cdot \legendre{2}{3} = (-1)(-1) = 1
+        \]
+
+        Now we check if 2 is a quadratic residue of 9 by calculating all of the QRs of 9. 
+        \begin{align*}
+            1^2 \equiv 1 \pmod{9} \\
+            2^2 \equiv 4 \pmod{9} \\
+            3^2 \equiv 0 \pmod{9} \\
+            4^2 \equiv 7 \pmod{9} \\
+            5^2 \equiv 7 \pmod{9} \\
+            6^2 \equiv 0 \pmod{9} \\
+            7^2 \equiv 4 \pmod{9} \\
+            8^2 \equiv 1 \pmod{9}
+        \end{align*}
+        
+        2 is not a quadratic residue of 9 and thus the converse is false.
+
+    % \item Quadratic reciprocity tells us when solutions exist to $x^2\equiv a\Mod p$, but it does not tell us how to find them. However:
+    % \begin{enumerate}
+    %     \item Suppose that $p\equiv 3\Mod 4$ and $\legp{a}=1$. Show that $x=a^{(p+1)/4}$ is a solution to $x^2\equiv a\Mod{p}$.
+    %     \item Suppose that $p\equiv 5\Mod 8$ and $\legp{a}=1$. Show that either $x = a^{(p+3)/8}$ OR $x=2a(4a)^{(p-5)/8}$ is a solution to $x^2\equiv a\Mod p$.
+    % \end{enumerate}
+
+    \item Prove that there are infinitely many primes of the form $8k+7$. (Hint: Emulate the proof that there are infinitely many primes of the form $4k+1$, using $N = (4p_1\cdots p_n)^2 - 2$.)
+    \begin{proof}
+        Suppose that there are only a finite number of primes of the form 
+        $8k+7$. Let these primes be $p_1,\dots,p_n$ s.t. $p_i\equiv 7\pmod{8}$.
+        Consider $N = (4p_1\dots p_n)^2 - 2$.
+        Let $p$ be an odd prime dividing $N$. Note $p\ne p_i$ for any $i$, otherwise 
+        $p\mid (N-(4p_1\dots p_n)^2) = -2$. 
+        But since $p\mid ((4p_1\dots p_n)^2 - 2)$, we have
+        \[
+            (4p_1\dots p_n)^2 \equiv 2 \pmod{p}
+        \]
+        ie. $\legendre{2}{p} = 1$, so $p\equiv 1,7\pmod{8}$. 
+        So we have constructed another prime $\equiv 7\pmod{8}$ not in the original list. 
+        Thus there are infinitely many primes of the form $8k+7$.
+
+    \end{proof}
+
+    \item Let $n=341$.
+    \begin{enumerate}
+        \item Apply the Fermat primality test to $n$ using $a=2$. What is the conclusion?
+        \begin{proof}
+            Let $a=2$. 
+            \[
+                \text{If } 2^{340}\not\equiv 1 \pmod{341} \text{, then 341 is composite.}
+            \]
+            The binary expansion of $2^{340}$ is 
+            \[
+                2^{340} = 2^{256}\cdot 2^{64}\cdot 2^{16}\cdot 2^{4}
+            \]
+
+            Then find what each term is congruent to $\pmod{341}$.
+            \begin{align*}
+                2   &\equiv 2 \pmod{341} \\
+                2^2 &\equiv 4 \\
+                2^4 &\equiv 16 \\
+                2^8 &\equiv 256 \\
+                2^{16} &\equiv 256^2 \equiv 65536 \equiv 64  \\
+                2^{32} &\equiv 64^2 \equiv 4096 \equiv 4 \\
+                2^{64}  &\equiv 4^2\equiv 16 \\
+                2^{128} &\equiv 16^2\equiv 256 \\
+                2^{256}  &\equiv 256^2\equiv 64
+            \end{align*}
+
+            By substitution,
+            \begin{align*}
+                2^{340} &\equiv 64\cdot 16\cdot 64\cdot 16 \pmod{341}\\
+                        &\equiv 4\cdot 256 \pmod{341}\\
+                        &\equiv 1 \pmod{341}
+            \end{align*}
+
+            We have found that $2^{340}\equiv 1\pmod{341}$, so the test is indeterminate.
+
+        \end{proof}
+
+        \item Apply the Solovay--Strassen primality test to $n$ using $a=2$. What is the conclusion?
+        \begin{proof}
+            Let $a=2$.
+            \[
+                \text{If } 2^{\frac{341-1}{2}}\not\equiv \legendre{2}{341}\pmod{341} \text{, then 341 is composite.}
+            \]
+            Evaluate $\legendre{2}{341}$.
+            Since  $341\equiv 5\pmod{8}, \legendre{2}{341} = -1$. \\
+
+            Now by substitution, we can check 
+            \begin{align*}
+                2^{170} \equiv -1 \pmod{341}  
+            \end{align*}
+
+            The binary expansion of $2^{170}$ is
+            \[
+                2^{128}\cdot 2^{32}\cdot 2^8\cdot 2^2
+            \]
+
+            By substitution, 
+            \begin{align*}
+                2^{170} &= 2^{128}\cdot 2^{32}\cdot 2^8\cdot 2^2 \\
+                        &\equiv 256\cdot 4\cdot 256\cdot 2\pmod{341} \\
+                        &\equiv 64\cdot 4\cdot 2 \\
+                        &\equiv 512 \pmod{341} \\
+                        &\equiv 171 \pmod{341}
+            \end{align*}
+            
+            $171 \not\equiv -1 \pmod{341}$, so we can conclude that 341 is composite. 
+
+        \end{proof}
+
+    \end{enumerate}
+
+    
+\end{enumerate}
+
+\end{document}
+

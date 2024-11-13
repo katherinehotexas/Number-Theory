@@ -1,0 +1,132 @@
+\chapter{Lecture 21}
+\date{November 12, 2024}
+
+\section{Midterm 2}
+    \subsection{Question 1}
+    \begin{enumerate}
+        \item $g$ prim root of $p$, $d\nmid p-1 \longrightarrow g^d$ prim root $\gcd(d,p-1) = 1$. FALSE
+        \item if $\exists a, 1\le a\le n-1$ s.t.
+            \[
+                a^{\frac{n-1}{2}}\ne \pm 1 \pmod{n}
+            \]
+            then $n$ is composite. TRUE
+        \item If $\gcd(a,n) = 1$, then $x^2\equiv a\pmod{n}$
+            has $e$, then 0 or 2 incongruent solutions. FALSE \\
+            Example: $x^2\equiv 1\pmod{8}, x\equiv 1,3,5,7$
+        \item If $\legendre{a}{n} = -1$, then $a$ is a NR of $n$. TRUE
+    \end{enumerate}
+
+    \subsection{Congruence solutions for $\legendre{3}{p}$}
+    \[
+        \legendre{3}{p} = \\
+        \begin{cases}
+            -\legendre{p}{3} \text{ if } p\equiv 3\pmod{4} \\
+            \legendre{p}{3} \text{ if } p\equiv 1\pmod{4} 
+        \end{cases}
+    \]
+    \begin{enumerate}
+        \item if $p\equiv 1\pmod{4}$, then 
+        \[
+            \legendre{3}{p} = \legendre{p}{3} = \\
+            \begin{cases}
+                1 \text{ if } p\equiv 1\pmod{3} \\
+                -1 \text{ if } p\equiv 2\pmod{3}
+            \end{cases}
+        \]
+        \item if $p\equiv 3\pmod{4}$, then 
+        \[
+            \legendre{3}{p} = -\legendre{p}{3} = \\
+            \begin{cases}
+                1 \text{ if } p\equiv 2\pmod{3} \\
+                -1 \text{ if } p\equiv 1\pmod{3}
+            \end{cases}
+        \]
+    \end{enumerate}
+    \[
+        \legendre{3}{p} = \\
+        \begin{cases}
+            1 \\
+            -1 
+        \end{cases}
+    \]
+    
+    \subsection{$p,q=2p+1$ odd primes}
+    WTS: -4 is a prime root of q. 
+    \[
+        \ord(-4) \mid (q-1) = 2p \longrightarrow \ord(-4) = 1, 2, p, \text{ or } 2p
+    \]
+    Rule out $\ord(-4) = p$. 
+    Compute $(-4)^p = -4^{\frac{q-1}{2}} \equiv \legendre{-4}{q}\pmod{q}$.
+    \[
+        \legendre{-4}{q} = \legendre{-1}{q}\legendre{4}{q} = \legendre{-1}{q}
+    \]
+    So if $\ord(-4) = p$, then $\legendre{-1}{q} = 1$, so $q\equiv 1\pmod{4}$.
+    But $q\equiv 3\pmod{4}$ since $q=2p+1$, Sophie Germain
+
+    \subsection{}
+    Let p be an odd prime, $(p-1)\nmid n$. 
+    Show $1^n+2^n+\dots+(p-1)^4\equiv 0\pmod{p}$. 
+    g = prim root. 
+    \[
+        g,g^2,\dots,g^{p-1}\equiv 1,2,\dots,p-1
+    \]
+    in some order.
+    \[
+        \longrightarrow 1^n+\dots+(p-1)^n \equiv g^n + g^{2n} + \dots + g^{(p-1)n} \pmod{p}
+    \]
+
+    \begin{align*}
+        (g^n - 1)(g^{n(p-1)} + \dots + g^n + 1) &= g^{np-1} \\
+        g^{n(p-1)} + \dots + g^n &= \frac{g^{np} - 1}{g^n - 1} - 1 \\
+        &\equiv 0
+    \end{align*}
+
+\section{Cryptography Stuff}
+\subsection{Remote Coin Flipping}
+    Instead of H/T, we will use roots of $x^2\equiv a\pmod{n}$ where $n=pq$.
+
+    Procedure: 
+    \begin{enumerate}
+        \item Alice chooses 2 odd primes $p,q (p\equiv q\equiv 3\pmod{4})$ 
+            and computes $n=pq$ and tells Bob $n$. 
+        \item Bob choose randomly some $1\le x\le n-1$, compute $a=x^2\pmod{n}$
+            and tell Alice $a$. 
+        \item Alice computes the square roots of $a\pmod{n}$, $\pm x_1$, $\pm x_2$
+            Choose either $\pm x_1$ or $\pm x_2$ (Heads or Tails), 
+            tell Bob $\pm x_1$ or $\pm x_2$.
+        \item If Bob's $x$ is different from Alice's then, Bob can factor $n$. 
+    \end{enumerate}
+
+    \begin{align*}
+        x^2\equiv 324\pmod{391}&, 391 = 17.23 \\
+        x^2\equiv 324\equiv 1\pmod{17} &,\quad x^2\equiv 324\equiv 2\pmod{23} \\
+        x\equiv \pm 1\pmod{17} &,\quad x^2\equiv 2\pmod{23}
+    \end{align*}
+
+    If $p\equiv 3\pmod{4}$ and $a$ is QR of $p$, then $x=a^{\frac{p+1}{4}}$ is a solution to $x\equiv a\pmod{p}$
+    
+    \begin{proof}
+        $x^2=(a^{\frac{p+1}{4}})^2 = a^{\frac{p+1}{2}} = a\cdot a^{\frac{p-1}{2}} \equiv a\cdot 1 \equiv a\pmod{p}$ \\
+        $x = 2^{\frac{23+1}{4}} = 2^6 = 64 \equiv -5$ \\
+
+        Solutions are $x\equiv \pm 5\pmod{23}$. 
+        $\rightarrow$ 4 systems. 
+        \begin{align*}
+            x\equiv 1\pmod{17},\quad x\equiv 5\pmod{23} \rightarrow x_1\pmod{391} \\
+            x\equiv 1\pmod{17},\quad x\equiv -5\pmod{23} \rightarrow x_2\pmod{391} \\
+            x\equiv -1\pmod{17},\quad x\equiv 5\pmod{23} \rightarrow -x_2\pmod{391} \\
+            x\equiv -1\pmod{17},\quad x\equiv -5\pmod{23} \rightarrow x_1\pmod{391} 
+        \end{align*}
+    \end{proof}
+
+    Back to (4), How does Bob factor n when he has knowledge of all 4 roots 
+    $\pm x_1, \pm x_2$ of $a$?
+    Idea: 
+    \begin{align*}
+        x_1^2\equiv a\equiv x_2^2\pmod{pq} \\
+        \rightarrow pq\mid x_1^2 - x_2^2 = (x_1 - x_2)(x_1 + x_2) \\
+        p\mid (x_1 - x_2)(WLOG)
+    \end{align*}
+    Then $q\nmid (x_1-x_2)$, $pq=n\mid (x_1-x_2)$  so $x_1\equiv x_2\pmod{n}$. 
+
+    $\rightarrow$ Bob computes $\gcd(x_1 - x_2, n) = p$ or $q$. 
