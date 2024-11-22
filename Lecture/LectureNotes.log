@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.27)  12 NOV 2024 12:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.27)  21 NOV 2024 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -402,7 +402,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \c@definition=\count310
 \c@proposition=\count311
 \c@example=\count312
- (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux) (Lectures/Lecture15.aux) (Lectures/Lecture16.aux) (Lectures/Lecture17.aux) (Lectures/Lecture18.aux) (Lectures/Lecture19.aux) (Lectures/Lecture20.aux) (Lectures/Lecture21.aux))
+ (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux) (Lectures/Lecture15.aux) (Lectures/Lecture16.aux) (Lectures/Lecture17.aux) (Lectures/Lecture18.aux) (Lectures/Lecture19.aux) (Lectures/Lecture20.aux) (Lectures/Lecture21.aux) (Lectures/Lecture22.aux) (Lectures/Lecture23.aux) (Lectures/Lecture24.aux))
 \openout1 = `LectureNotes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -655,7 +655,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-<Images/image1.jpg, id=768, 1662.21pt x 1836.8625pt>
+<Images/image1.jpg, id=818, 1662.21pt x 1836.8625pt>
 File: Images/image1.jpg Graphic file (type jpg)
 <use Images/image1.jpg>
 Package pdftex.def Info: Images/image1.jpg  used on input line 62.
@@ -665,7 +665,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-<Images/image2.jpg, id=769, 2212.265pt x 2459.1875pt>
+<Images/image2.jpg, id=819, 2212.265pt x 2459.1875pt>
 File: Images/image2.jpg Graphic file (type jpg)
 <use Images/image2.jpg>
 Package pdftex.def Info: Images/image2.jpg  used on input line 64.
@@ -1031,7 +1031,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
  (Lectures/Lecture18.tex
 Chapter 18.
-<Images/lec18_number_line.png, id=1008, 493.3632pt x 206.2104pt>
+<Images/lec18_number_line.png, id=1058, 493.3632pt x 206.2104pt>
 File: Images/lec18_number_line.png Graphic file (type png)
 <use Images/lec18_number_line.png>
 Package pdftex.def Info: Images/lec18_number_line.png  used on input line 40.
@@ -1044,17 +1044,17 @@ Package pdftex.def Info: Images/lec18_number_line.png  used on input line 40.
 
 
  <./Images/lec18_number_line.png>]
-<Images/leg18_number_plane.jpg, id=1022, 1284.8pt x 722.7pt>
+<Images/leg18_number_plane.jpg, id=1072, 1284.8pt x 722.7pt>
 File: Images/leg18_number_plane.jpg Graphic file (type jpg)
 <use Images/leg18_number_plane.jpg>
 Package pdftex.def Info: Images/leg18_number_plane.jpg  used on input line 44.
 (pdftex.def)             Requested size: 202.31786pt x 113.81102pt.
-<Images/lec18_vec_add.png, id=1023, 501.875pt x 345.29pt>
+<Images/lec18_vec_add.png, id=1073, 501.875pt x 345.29pt>
 File: Images/lec18_vec_add.png Graphic file (type png)
 <use Images/lec18_vec_add.png>
 Package pdftex.def Info: Images/lec18_vec_add.png  used on input line 50.
 (pdftex.def)             Requested size: 165.42015pt x 113.81102pt.
-<Images/lec18_vec_mul.png, id=1024, 210.7875pt x 241.90375pt>
+<Images/lec18_vec_mul.png, id=1074, 210.7875pt x 241.90375pt>
 File: Images/lec18_vec_mul.png Graphic file (type png)
 <use Images/lec18_vec_mul.png>
 Package pdftex.def Info: Images/lec18_vec_mul.png  used on input line 57.
@@ -1214,26 +1214,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
 [78])
 
-[79] (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux) (Lectures/Lecture15.aux) (Lectures/Lecture16.aux) (Lectures/Lecture17.aux) (Lectures/Lecture18.aux) (Lectures/Lecture19.aux) (Lectures/Lecture20.aux) (Lectures/Lecture21.aux))
+[79]
+\openout2 = `Lectures/Lecture22.aux'.
+
+ (Lectures/Lecture22.tex
+
+[80
+
+
+
+
+]
+Chapter 22.
+
+
+[81]
+
+[82]
+
+[83])
+
+[84]
+\openout2 = `Lectures/Lecture23.aux'.
+
+ (Lectures/Lecture23.tex
+Chapter 23.
+
+Underfull \vbox (badness 2846) has occurred while \output is active []
+
+
+
+[85
+
+
+
+
+]
+
+[86]
+
+[87])
+
+[88]
+\openout2 = `Lectures/Lecture24.aux'.
+
+ (Lectures/Lecture24.tex
+Chapter 24.
+
+
+[89
+
+
+
+
+]
+
+[90]
+
+[91])
+
+[92] (LectureNotes.aux (Lectures/Lecture1.aux) (Lectures/Lecture2.aux) (Lectures/Lecture3.aux) (Lectures/Lecture4.aux) (Lectures/Lecture5.aux) (Lectures/Lecture6.aux) (Lectures/Lecture7.aux) (Lectures/Lecture8.aux) (Lectures/Lecture9.aux) (Lectures/Lecture10.aux) (Lectures/Lecture11.aux) (Lectures/Lecture12.aux) (Lectures/Lecture13.aux) (Lectures/Lecture14.aux) (Lectures/Lecture15.aux) (Lectures/Lecture16.aux) (Lectures/Lecture17.aux) (Lectures/Lecture18.aux) (Lectures/Lecture19.aux) (Lectures/Lecture20.aux) (Lectures/Lecture21.aux) (Lectures/Lecture22.aux) (Lectures/Lecture23.aux) (Lectures/Lecture24.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
 Package rerunfilecheck Info: File `LectureNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 9775088F4CA476F5B4407A88E503600C;15769.
+(rerunfilecheck)             Checksum: B06E48F4F20D5621349DC4D47456CECD;17304.
  ) 
 Here is how much of TeX's memory you used:
- 13102 strings out of 473898
- 218195 string characters out of 5726479
+ 13241 strings out of 473898
+ 221779 string characters out of 5726479
  1947960 words of memory out of 5000000
- 35273 multiletter control sequences out of 15000+600000
+ 35339 multiletter control sequences out of 15000+600000
  568330 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,16n,93p,1240b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\katie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LectureNotes.pdf (79 pages, 1318705 bytes).
+Output written on LectureNotes.pdf (92 pages, 1364449 bytes).
 PDF statistics:
- 1287 PDF objects out of 1440 (max. 8388607)
- 377 named destinations out of 1000 (max. 500000)
- 927 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1430 PDF objects out of 1440 (max. 8388607)
+ 429 named destinations out of 1000 (max. 500000)
+ 1007 words of extra memory for PDF output out of 10000 (max. 10000000)
 

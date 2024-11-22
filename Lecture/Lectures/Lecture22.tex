@@ -1,0 +1,173 @@
+\chapter{Lecture 22}
+\date{November 14, 2024}
+
+\section{Recall: Arithmetic Functions}
+    \[
+        f: \NN \rightarrow \RR (\CC)
+    \]
+    that have some "number theory" property. 
+
+    Ex. $\phi = $ totient, $\sigma = $ divisor sum, $\tau = $ divisor count 
+
+    \begin{definition}
+        $f$ is multiplicative if $f(ab) = f(a)f(b)$ whenever $\gcd(a,b) = 1$.
+    \end{definition}
+
+    We can express 
+    \[
+        \tau(n) = \sum_{d\mid n}^{} 1
+    \]
+    \[
+        \sigma(n) = \sum_{d\mid n}^{} d
+    \]
+    Ex. $n=12, \quad\sum_{d\mid 12}^{} f(d) = f(1)+f(2)+f(3)+f(4)+f(6)f(12)$
+
+    Conversely, given arithmetic function $f$ we can define $F(n) = \sum_{d\mid n}^{} f(d)$
+
+    \underline{Recall}
+    \[
+        \sum_{d\mid n}^{} \phi(d) = n
+    \]
+
+    \begin{theorem}
+        Let $n = p_1^{e_1}\dots p_r^{e_r}$, then 
+        \begin{enumerate}
+            \item $\tau(n) = (e_1 + 1)(e_2 + 1)\dots(e_r + 1)$
+            \item $\sigma(n) = \frac{p_1^{e_1+1} - 1}{p_1 - 1} + \dots + \frac{p_r^{e_r+1} - 1}{p_r - 1}$
+            \item $\phi(n) = (p_1^{e_1} - p_1^{e_1-1})\dots(p_r^{e_r} - p_r^{e_r - 1})$
+        \end{enumerate}
+        \begin{align*}
+            \sigma(p^e) &= (1+p+p^2+\dots+p^{e-1}+p^e) \\
+            &= \frac{p^{e+1}-1}{p-1}
+        \end{align*}
+        If $d\mid n = p_1^{e_1} - p_r^{e_r}$, then $d=p_1^{k_1}\dots p_r^{k_r}$ where $0\le k_i \le e_i$
+    \end{theorem}
+
+    \begin{theorem}
+        If $f$ is multiplicative, then 
+        \[
+            F(n) = \sum_{d\mid n}^{} f(d)
+        \]
+        is multiplicative. 
+    \end{theorem}
+
+    \begin{corollary}
+        $\tau(n)$, $\sigma(n)$ are multiplicative.
+    \end{corollary}
+
+    \begin{theorem}
+        If $F$ is multiplicative, then $f$ is multiplicative.
+    \end{theorem}
+
+\section{Mobius Function}
+    Let $n$ be a positive integer. 
+
+    \begin{align*}
+        \mu(n) =
+        \begin{cases}
+            1 \quad\text{ if } n = 1 \\
+            0 \quad\text{ if } p^2\mid n = \text{ for some prime } p \\
+            (-1)^r \quad\text{ if } n = p_1\dots p_r \text{ distinct primes}
+        \end{cases}
+    \end{align*}
+    Ex. $\mu(2) = -1, \quad\mu(p) = -1, \quad\mu(12) = 0, \quad\mu(6) = 1$
+
+    \begin{theorem}
+        $\mu$ is multiplicative. 
+        \begin{proof}
+            Let $\gcd(a,b) = 1$. If for some prime $p$ we have $p^2\mid a$ or $p^2\mid b$, 
+            then $p^2\mid ab$, so $\mu(a)\mu(b) = 0 = \mu(ab)$. 
+
+            Now suppose $a=p_1\dots p_r, \quad b=q_1\dots q_k$ are square-free. then
+            \begin{align*}
+                \mu(ab) &= \mu(p_1\dots p_r q_1\dots q_k)  \\
+                &= (-1)^{r+k} \\
+                &= (-1)^r(-1)^k  \\
+                &= \mu(a)\mu(b)
+            \end{align*}
+            
+            $n = \sum_{d\mid n}^{} f(d)$, what is $f(d)$? $f(d) = \phi(d)$. 
+            \[
+                F(n) = \sum_{d\mid n}^{} f(d) = 
+                \begin{cases}
+                    1 \quad n = 1 \\
+                    0 \quad \text{otherwise}
+                \end{cases}
+            \]
+            What is $F(n) = \sum_{d\mid n}^{} \mu(d)$?
+
+            Ex. $F(10) = \sum_{d\mid 10}^{} \mu(d) = \mu(1) + \mu(2) + \mu(5) + \mu(10) = 1-1-1+1 = 0$.
+
+            Ex. $F(12) = \sum_{d\mid 12}^{} \mu(d) = \mu(1) + \mu(2) + \mu(3) + \mu(4) + \mu(6) + \mu(12) = 1-1-1+0+1+0 = 0$.
+
+        \end{proof}
+    \end{theorem}
+
+    \begin{theorem}
+        Let $F(n) = \sum_{d\mid n}^{} \mu(d)$. 
+        Then 
+        \[
+            F(n) = 
+            \begin{cases}
+                1 \quad\text{if } n = 1 \\
+                0 \quad\text{if } n > 1
+            \end{cases}    
+        \]
+        \begin{proof}
+            We have that $F$ is multiplicative. Since $\mu$ is multiplicative, let us compute
+            \[
+                F(p^k) = \mu(1) + \mu(p) + \mu(p^2) + \dots + \mu(p^k) = 1-1+0+\dots+0 = 0
+            \]
+            If $n = p_1^{e_1}\dots p_r^{e_r}$, then $F(n) = F(p_1^{e_1})\dots F(p_r^{e_r}) = 0$
+        \end{proof}
+    \end{theorem}
+
+    \subsection{Mobius Inversion Formula}
+    \begin{theorem} [Mobius Inversion Formula]
+        Let $F(n) = \sum_{d\mid n}^{} f(d)$. Then 
+        \[
+            f(n) = \sum_{d\mid n}^{} \mu\legendre{n}{d}F(d)
+        \]
+        \begin{proof} [(Idea)]
+            Use $n = 10$.
+            \begin{align*}
+                \sum_{d\mid 10}^{} \mu(d)F(\frac{10}{d}) &= \sum_{d\mid 10}^{}(\mu(d)\sum_{c\mid \frac{10}{d}}^{}f(c)) \\
+                &= \mu(1)(f(1)+f(2)+f(5)+f(10)) \\
+                &\quad+ \mu(2)(f(1) + f(5)) \\
+                &\quad+ \mu(5)(f(1) + f(2)) \\
+                &\quad+ \mu(10)(f(1)) \\
+                &= f(1)(\mu(1)+\mu(2)+\mu(5)+\mu(10)) \\
+                &\quad+ f(2)(\mu(1)+\mu(5)) \\
+                &\quad+ f(5)(\mu(1)+\mu(2)) \\
+                &\quad+ f(10)(\mu(1)) \\
+                &= \sum_{d\mid 10}^{} f(d)(\sum_{c\mid \frac{10}{d}}^{}\mu(c))
+            \end{align*}
+
+            \begin{align*}
+                \sum_{d\mid n}^{} \mu(d)F(\frac{n}{d}) &= \sum_{d\mid n}^{} (\mu(d)\sum_{c\mid \frac{n}{d}}^{}f(c)) \\
+                &= \sum_{d\mid n}^{} (f(d)\sum_{c\mid \frac{n}{d}}^{}\mu(c)) = 
+                \begin{cases}
+                    0 \quad\text{if } \frac{n}{d} > 1 \\
+                    1 \quad\text{if } n = d
+                \end{cases} \\
+                &= \sum_{d=n}^{} f(d)\sum_{d\mid 1}^{}\mu(c) \\
+                &= f(n)
+            \end{align*}
+
+            To be more precise:
+            \begin{align*}
+                \sum_{d\mid n}^{} \mu(d) \sum_{c\mid\frac{n}{d}}^{} f(c) \\
+                &= \sum_{d\mid n}^{}\sum_{c\mid\frac{n}{d}}^{} \mu(d)f(c) \\
+                &= \sum_{d\mid n, c\mid\frac{n}{d}}^{} \mu(d)f(c) \\
+                &= \sum_{c\mid n, d\mid\frac{n}{c}}^{} \mu(d)f(c)
+            \end{align*}
+        \end{proof}
+    \end{theorem}
+
+    Ex: 
+    \begin{align*}
+        \tau(n) = \sum_{d\mid n}^{} 1 \\
+        \rightarrow 1 = \sum_{d\mid n}^{} \mu(\frac{n}{d})\tau(d) \\
+        \sigma(n) = \sum_{d\mid n}^{} d \\
+        n = \sum_{d\mid n}^{}\mu(\frac{n}{d})\sigma(d) (=\sum_{d\mid n}^{}\phi(d))
+    \end{align*}

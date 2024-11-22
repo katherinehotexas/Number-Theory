@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+
+\usepackage[Glenn]{fncychap}
+% Sonny Lenny Glenn Conny Rejne Bjarne Bjornstrup
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ord}{\operatorname{ord}}
+
+\newcommand{\leg}[2]{\genfrac(){}{0}{#1}{#2}}
+\newcommand{\legp}[1]{\leg{#1}{p}}
+
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+
+\title{M328K: Homework 10}
+\author{Katherine Ho}
+\date\today
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item In this problem we will investigate an important arithmetic function that is \emph{not} multiplicative. The \emph{Mangoldt function} $\Lambda$ is defined by
+$$
+\Lambda(n) = \begin{cases}
+    \log p & \text{if $n=p^k$, where $p$ is prime and $k\geq 1$} \\
+    0 & \text{otherwise.}
+\end{cases}
+$$
+\begin{enumerate}
+    \item Show that $\log n = \sum_{d\mid n} \Lambda(n)$. (Warning: In previous examples like this, it was sufficient to prove the equality for $n=p^k$ a prime power, but that is not enough here, since $\Lambda$ is not multiplicative.)
+    \item Show that $\Lambda(n) = -\sum_{d\mid n} \mu(d)\log(d)$.
+\end{enumerate}
+
+
+    \item Consider the continued fraction $[2;5,1,3]$.
+    \begin{enumerate}
+        \item Calculate the convergents $C_0, C_1, C_2, C_3$.
+        \item If $C_k = p_k/q_k$, calculate the continued fraction expansions of $p_k/p_{k-1}$ for $1\leq k\leq 3$.
+        \item Given a continued fraction $[a_0;a_1,\dots,a_n]$ with $a_0>0$, form a conjecture about the continued fraction expansion of $p_n/p_{n-1}$. Prove it.
+    \end{enumerate}
+    \item Compute continued fraction expansions of the following:
+    \begin{enumerate}
+        \item $\sqrt 5$
+        \item $\displaystyle\frac{5+\sqrt{37}}{2}$
+        \item $\sqrt{n^2+1}$ for any $n>0$.
+    \end{enumerate}
+    \item Using the continued fraction of $\sqrt 5$ from the previous problem, find the first convergent that gives a rational approximation of $\sqrt 5$ accurate to four decimal places.
+\end{enumerate}
+
+\end{document}
+

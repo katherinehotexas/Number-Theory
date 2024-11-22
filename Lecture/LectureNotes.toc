@@ -110,3 +110,13 @@
 \contentsline {subsection}{\numberline {21.1.4}}{78}{subsection.21.1.4}%
 \contentsline {section}{\numberline {21.2}Cryptography Stuff}{78}{section.21.2}%
 \contentsline {subsection}{\numberline {21.2.1}Remote Coin Flipping}{78}{subsection.21.2.1}%
+\contentsline {chapter}{\numberline {22}Lecture 22}{81}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Recall: Arithmetic Functions}{81}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Mobius Function}{82}{section.22.2}%
+\contentsline {subsection}{\numberline {22.2.1}Mobius Inversion Formula}{83}{subsection.22.2.1}%
+\contentsline {chapter}{\numberline {23}Lecture 23}{85}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Diophantine Equations}{85}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Diophantine Approximation}{85}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Continued Fractions}{85}{section.23.3}%
+\contentsline {chapter}{\numberline {24}Lecture 24}{89}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Recall: Continued Fractions}{89}{section.24.1}%

@@ -1,0 +1,217 @@
+\chapter{Lecture 24}
+\date{November 21, 2024}
+
+\section{Recall: Continued Fractions}
+    pi example:
+    \begin{align*}
+        \pi &= [3;7,15,1,292,\dots] \\
+        C_0 &= 3, C1 = \frac{22}{7}, \\
+        C_2 &= \frac{333}{106}, C_3 = \frac{355}{113}, \\
+        C_4 &= \frac{103993}{33102}
+    \end{align*}
+
+    Continued Fractions
+    \begin{align*}
+        [a_0; a_1, a_2, \dots] = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \dots}}
+    \end{align*}
+
+    nth convergent:
+    \[
+        C_n = [a_0; a_1, a_2, \dots, a_n]
+    \]
+
+    \begin{theorem}
+        \begin{align*}
+            p_0 &= a_0, q_0 = 1, \\
+            p_1 &= a_1a_0+1, q_1 = a_1, \\
+            p_n &= a_np_{n_1}+p_{n-2}, q_n=a_nq_{n-1}+q_{n-2}
+        \end{align*}
+        Then,
+        \[
+            C_n = \frac{p_n}{q_n}
+        \]
+    \end{theorem}
+
+    \underline{Ex}: $\quad e = [2;1,2,1,1,4,1,1,6,1,\dots]$
+    \begin{align*}
+        C_0 &= \frac{p_0}{q_0} = \frac{a_0}{1} = 2 \\
+        C_1 &= \frac{p_1}{q_1} = \frac{a_1a_0+1}{a_1} = \frac{2\cdot 2 + 1}{1} = \frac{3}{1} \\
+        C_2 &= \frac{2\cdot p_1 + p_0}{2\cdot q_1 + q_0} = \frac{2\cdot 3 + 2}{2\cdot 1 + 1} = \frac{8}{3} \\
+        C_3 &= \frac{1\cdot 8 + 3}{1\cdot 3 + 1} = \frac{11}{4}
+    \end{align*}
+        
+    \begin{theorem}
+        \[
+            p_kq_{k-1} - q_kp_{k-1} = (-1)^{k-1} \quad (p_{k+1}q_k - q_{k+1}p_k = (-1)^k)
+        \]
+        \begin{proof}
+            Base case: $k=1$
+            \[
+                p_1q_0 = q_1p_0 = (a_1a_0+1)(1)-(a_1)(a_0) = 1 = (-1)^0
+            \]
+            Now assume for induction that 
+            \[
+                p_mq_{m-1} - q_mp_{m-1} = (-1)^{m-1}
+            \]
+            Now consider 
+            \begin{align*}
+                p_{m+1}q_m - q_{m+1}p_m &= (a_{m+1}p_m + p_{m-1})q_m - (a_{m+1}q_m + q_{m-1})p_m \\
+                &= a_m + p_mq_m + p_{m+1}q_m - a_{m+1}q_mp_m - q_{m-1}p_m \\
+                &= -(p_mq_{m-1} - q_mp_{m-1}) \\
+                &= -(-1)^{m-1} = (-1)^m
+            \end{align*}
+        \end{proof}
+    \end{theorem}
+    
+    \underline{Note}: This says that 
+    \[
+        p_kx+q_ky = \pm 1
+    \]
+    has an integer solution. 
+
+    So Bezout $\rightarrow \gcd(p_k,q_k = 1)$
+
+    \begin{corollary}
+        $C_k = \frac{p_k}{q_k}$ is in lowest terms.
+    \end{corollary}
+
+    \begin{corollary}
+        $C_{k+1} - C_k = \frac{(-1)^k}{q_kq_{k+1}}$
+        \begin{proof}
+            \begin{align*}
+                C_{k+1} - C_k &= \frac{p_{k+1}}{q_{k+1}} \\
+                &= \frac{p_{k+1}q_k - q_{k+1}p_k}{q_{k+1}q_k} \\
+                &= \frac{(-1)^k}{q_{k+1}q_k}
+            \end{align*}
+        \end{proof}
+    \end{corollary}
+    
+    Note: The relation $q_k = a_kq_{k-1} + q_{k-2}$
+    implies that $0 < q_o \le q_1 < q_2 < q_3 <\dots$
+
+    \begin{corollary}
+        All infinite (simple) continued fractions converge.
+    \end{corollary}
+
+    \begin{theorem}
+        \dots
+        \begin{itemize}
+            \item $C_0 < C_2 < C_4 < \dots$
+            \item $C_1 > C_3 > C_5 > \dots$
+        \end{itemize}
+        \begin{proof}
+            \begin{align*}
+                C_{k+2} - C_k &= (C_{k+2} - C_{k+1}) + (C_{k+1} - C_k) \\
+                &= \frac{(-1)^{k+1}}{q_{k+2}q_{k+1}} + \frac{(-1)^k}{q_{k+1}q_k} \\
+                &= \frac{(-1)^k(q_{k_2} - q_k)}{q_{k+2}q_{k+1}q_k}
+            \end{align*} 
+        \end{proof}
+    \end{theorem}
+
+    \begin{theorem} [Dirichlet's Approximation]
+        Let $x$ be irrational. 
+        Then there exist infinitely many $\frac{a}{b}\in\QQ \quad(\gcd(a,b)=1)$
+        such that 
+        \[
+            |x-\frac{a}{b}| < \frac{1}{b^2}
+        \]
+        \begin{proof}
+            Let $x=[a_0; a_1, \dots]$
+
+            We want to bound $|x-C_k|$.
+            \begin{align*}
+                |x-C_k| &\le |C_{k+1} - C_k| \\
+                &= |\frac{(-1)^k}{q_{k+1}q_k}| \\
+                &= \frac{1}{q_{k+1}q_k} \\
+                &< \frac{1}{q_k^2}
+            \end{align*}
+            bc $q_{k+1} > q_k$.
+        \end{proof}
+    \end{theorem}
+
+    \underline{Remark}: (Thue-Siegel-Roth Theorem)
+
+    If $\alpha > 2$ then there exist at most finitely many $\frac{a}{b}\in\CC\quad(\gcd(\frac{a}{b}) = 1)$
+    such that 
+    \[
+        |x-\frac{a}{b}| < \frac{1}{b^\alpha}
+    \]
+
+    \begin{theorem}
+        $C_k = \frac{p_k}{q_k}$ approximates $x$ "the best" in the sense that 
+        if $1\le b\le q_k$, then 
+        \[
+            |x-\frac{p_k}{q_k}| \le |x - \frac{a}{b}|
+        \]
+        for any $a\in\ZZ$. 
+    \end{theorem}
+
+    \begin{lemma}
+        If $\frac{a}{b} \in\QQ$ with $1\le b\le q_k$, then 
+        \[
+            |q_kx-p_k| \le |bx-a|
+        \]
+        \begin{proof}
+            Consider the system of equations
+            \begin{align*}
+                p_k\alpha + p_{k+1}\beta = a \\
+                q_k\alpha + q_{k+1}\beta = b
+            \end{align*}
+            has a solution iff
+            \[
+                det\begin{bmatrix}
+                    p_k & p_{k+1} \\
+                    q_k & q_{k+1}
+                \end{bmatrix} \ne 0
+            \]
+            has an integer solution iff 
+            \[
+                det\begin{bmatrix}
+                    p_k & p_{k+1} \\
+                    q_k & q_{k+1}
+                \end{bmatrix} = \pm 1
+            \]
+        \end{proof}
+    \end{lemma}
+
+    Hence 7 integer solutions $\alpha, \beta$
+
+    Details: 
+    \begin{itemize}
+        \item $\alpha \ne 0$
+        \item $\beta = 0$ then Thm is true.
+    \end{itemize}
+    Now assume both $\alpha,\beta \ne 0$.
+    We want to show that $\alpha$ and $\beta$ have opposite signs.
+
+    Why? 
+    
+    If $\beta < 0$, then $q_k\alpha = b - q_{k+1}\beta$
+
+    If $\beta > 0$, then same equations shows $\alpha < 0$.
+
+    Thus, 
+    \begin{align*}
+        |bx-a| &= |(q_k\alpha + q_{k+1}\beta)x - (p_k\alpha + p_{k+1}\beta) \\
+        &= |\alpha(q_kx - p_k) + \beta(q_{k+1}x-p_{k+1})| 
+    \end{align*}
+    If $q_kx-p_k > 0$, then $x-\frac{p_k}{q_k} > 0 \rightarrow x-\frac{p_{k+1}}{q_{k+1}} < 0$, 
+    then $\alpha(q_kx - p_k)$ and $\beta(q_{k+1}x-p_{k+1})$ have the same sign, so
+    \begin{align*}
+        &= |\alpha(q_kx - p_k)| + |\beta(q_{k+1}x-p_{k+1})| \\
+        &\ge |\alpha||q_kx-p_k| \\
+        &\ge |q_kx-p_k|
+    \end{align*}
+
+    \begin{proof} [Proof Thm]
+        If $1\le b \le q_k$, then $\frac{a}{b}$ satisfies $|x-\frac{p_k}{q_k}| < |x-\frac{a}{b}|$
+
+        Suppose $|x-\frac{p_k}{q_k}| > |x-\frac{a}{b}|$. Then 
+        \[
+            |q_kx-p_k > q_k| |x-\frac{a}{b}|
+        \]
+        But by the technical result, 
+        \[
+            |bx-a| > q_k|x-\frac{a}{b}| \ge b|x-\frac{a}{b}|
+        \]
+    \end{proof}
