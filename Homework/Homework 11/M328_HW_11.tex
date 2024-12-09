@@ -1,0 +1,230 @@
+\documentclass[11pt]{article}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+
+\usepackage[Glenn]{fncychap}
+% Sonny Lenny Glenn Conny Rejne Bjarne Bjornstrup
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ord}{\operatorname{ord}}
+
+\newcommand{\leg}[2]{\genfrac(){}{0}{#1}{#2}}
+\newcommand{\legp}[1]{\leg{#1}{p}}
+
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+
+\title{M328K: Homework 11}
+\author{Katherine Ho}
+\date\today
+\begin{document}
+\maketitle
+
+\begin{thm}
+    Let $x_1,y_1$ be the fundamental solution\footnote{Recall the \emph{fundamental solution} of Pell's equation is the smallest positive integer solution.} of $x^2-D y^2 = 1$. Then every pair of integers $x_n, y_n$ defined by
+        $$ x_n + y_n \sqrt{d} = (x_1 + y_1 \sqrt{d})^n, \quad n=1,2,3,\dots$$ is also a solution. In fact, every positive solution is given by such a pair $x_n, y_n$.
+\end{thm}
+
+\begin{enumerate}
+    \item Prove that the integer pair $x_n, y_n$ in Theorem 1 is a solution of $x^2-D y^2 = 1$ for all positive integers $n$. 
+    \begin{proof}
+        By definition, 
+        \[
+            x_n + y_n\sqrt{d} = (x_1 + y_1\sqrt{d})^n
+        \]
+        Since the expressions are equal, we can multiply each side by its conjugate.
+        \[
+            (x_n + y_n\sqrt{d})(x_n - y_n\sqrt{d}) = (x_1 + y_1\sqrt{d})^n (x_1 - y_1\sqrt{d})^n 
+        \]
+        From the fundamental solution of $x_1-dy_1^2 = 1$, we know 
+        \[
+            (x_1 + y_1\sqrt{d}) (x_1 - y_1\sqrt{d}) = 1
+        \]
+        Raising both sides to the $n$th power where $n = 1, 2, 3, \dots$, we have
+        \[
+            (x_1 + y_1\sqrt{d})^n (x_1 - y_1\sqrt{d})^n = 1^n = 1
+        \]
+        Then by substitution and algebra, 
+        \begin{align*}
+            (x_n + y_n\sqrt{d})(x_n - y_n\sqrt{d}) &= (x_1 + y_1\sqrt{d})^n (x_1 - y_1\sqrt{d})^n \\
+            (x_n + y_n\sqrt{d})(x_n - y_n\sqrt{d}) &= 1 \\
+            x_n^2 + dy_n^2 &= 1
+        \end{align*}
+        Thus the integer pair $x_n, y_n$ is a solution of $x^2 - dy^2 = 1$ for all positive integers $n$. 
+    \end{proof}
+    
+    \item
+    \begin{enumerate} 
+        \item Calculate the continued fraction representation of $\sqrt{14}$ using the rationalizing denominators method. In particular, do not use the decimal representation of $\sqrt{14}$. Only use that the integer part of $\sqrt{14}$ is 3.
+        \begin{proof}
+            \begin{align*}
+                \sqrt{14} &= 3 + \sqrt{14} - 3 \\
+                &= 3 + \frac{1}{\frac{1}{\sqrt{14} - 3}} 
+            \end{align*}
+            \[
+                \frac{1}{\sqrt{14}-3} = \frac{\sqrt{14} + 3}{14-9} = \frac{\sqrt{14}+3}{5}
+            \]
+            The integer component of this fraction is 1 since the integer part of $\sqrt{14}$ is 3. 
+            \[
+                \frac{\sqrt{14} + 3}{5} = 1 + \frac{\sqrt{14} + 3}{5} - 1 = 1 + \frac{\sqrt{14}-2}{5} = 1 + \frac{1}{\frac{1}{\frac{\sqrt{14}-2}{5}}}
+            \]
+            So, 
+            \[
+                \sqrt{14} = 3 + \frac{1}{1 + \frac{1}{\frac{1}{\frac{\sqrt{14}-2}{5}}}}
+            \]
+            \[
+                \frac{1}{\frac{\sqrt{14}-2}{5}} = \frac{5}{\sqrt{14}-2} = \frac{5\sqrt{14} + 10}{10} = \frac{\sqrt{14}+2}{2}
+            \]
+            The integer component is 2. 
+            \[
+                2 + \frac{\sqrt{14}+2}{2} - 2 = 2 + \frac{\sqrt{14}-2}{2} = 2 + \frac{1}{\frac{1}{\frac{\sqrt{14}-2}{2}}}
+            \]
+            By substitution, 
+            \[
+                \sqrt{14} = 3 + \frac{1}{1 + \frac{1}{2 + \frac{1}{\frac{1}{\frac{\sqrt{14}-2}{2}}}}}
+            \]
+            \[
+                \frac{1}{\frac{\sqrt{14}-2}{2}} = \frac{2}{\sqrt{14}-2} = \frac{2\sqrt{14}+4}{10} = \frac{\sqrt{14}+2}{5}
+            \]
+            The integer component is 1.
+            \[
+                \frac{\sqrt{14}+2}{5} = 1 + \frac{\sqrt{14}+2}{5} - 1 = 1 + \frac{\sqrt{14}-3}{5} = 1 + \frac{1}{\frac{1}{\frac{\sqrt{14}-3}{5}}}
+            \]
+            By substitution, 
+            \[
+                \sqrt{14} = 3 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{\frac{1}{\frac{\sqrt{14}-3}{5}}}}}}
+            \]
+            \[
+                \frac{1}{\frac{\sqrt{14}-3}{5}} = \frac{5}{\sqrt{14}-3} = \frac{5(\sqrt{14}+3)}{5} = \sqrt{14}+3
+            \]
+            The integer component is 6. 
+            \[
+                6 + \sqrt{14} + 3 - 6 = 6 + \sqrt{14}-3 = 6 + \frac{1}{\frac{1}{\sqrt{14}-3}}
+            \]
+            By substitution, 
+            \[
+                \sqrt{14} = 3 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{6 + \frac{1}{\frac{1}{\sqrt{14}-3}}}}}}
+            \]
+            We already know $\frac{1}{\sqrt{14}-3}$, so we know that the fractions will continue in the same pattern. 
+
+            Thus, 
+            \[
+                \sqrt{14} = 3 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{6 + \frac{1}{1 + \dots}}}}} = [3;\overline{1,2,1,6}]
+            \]
+        \end{proof}
+        
+        \item Use the previous problem to find the fundamental solution of $x^2-14 y^2 = 1$.
+        \begin{proof}
+            First, find the convergents of the continued fraction of $\sqrt{14}$, 
+            where $C_n = \frac{p_n}{q_n}$.
+            \begin{align*}
+                C_0 &= \frac{3}{1} \\
+                C_1 &= 3 + \frac{1}{1} = \frac{4}{1} \\
+                C_2 &= 3 + \frac{1}{1 + \frac{1}{2}} = \frac{11}{3} \\
+                C_3 &= 3 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1}}} = \frac{15}{4} \\
+                C_4 &= 3 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{6}}}} = \frac{41}{11} 
+            \end{align*}
+            The fundamental solution satisfies $p_n^2-14q_n^2 = 1$. So we use the convergents to find the solution pair $p_n, q_n$ with the smallest $n$. 
+            \begin{align*}
+                n&=0: \quad 3^2 - 14\cdot 1^2 = -5 \\
+                n&=1: \quad 4^2 - 14\cdot 1^2 = 2 \\
+                n&=2: \quad 11^2 - 14\cdot 3^2 = -5 \\
+                n&=3: \quad 15^2 - 14\cdot 4^2 = 1
+            \end{align*}
+            Thus the fundamental solution of $x^2 - 14y^2 = 1$ is $(x,y) = (15,4)$.
+        \end{proof}
+        
+        \item Use Theorem 1 to calculate two more distinct positive solutions of $x^2-14 y^2 = 1$.
+        \begin{proof}
+            By Theorem 1, the solutions $(x_n, y_n)$
+            for positive integers $n$ are 
+            \[
+                x_n + y_n\sqrt{14} = (15 + 4\sqrt{14})^n
+            \]
+
+            For $n=2$: 
+            $(15+4\sqrt{14})^2 = 225 + 120\sqrt{14} + 224 = 449 + 120\sqrt{14}$
+            
+            So, one solution is $(x_2, y_2) = (449,120)$
+
+            For $n=3$:
+            \begin{align*}
+                (15+4\sqrt{14})^3 &= (449 + 120\sqrt{14})(15+4\sqrt{14}) \\
+                &= 6735 + 3596\sqrt{14} + 6720 \\
+                &= 13455 + 3596\sqrt{14}
+            \end{align*}
+            So, another solution is $(x_3, y_3) = (13455,3596)$
+        \end{proof}
+    
+    \end{enumerate}
+    \item Let $x$ be irrational, and let $\frac{p_n}{q_n}$ and $\frac{p_{n+1}}{q_{n+1}}$ be two consecutive convergents of $x$. Show that at least one of the convergents satisfies the inequality
+    $$ \left\lvert x - \frac{p_i}{q_i} \right\rvert < \frac{1}{2q_i^2}. $$ Hint: Since $x$ lies between the two convergents, we have $$\left\lvert \frac{p_n}{q_n} - \frac{p_{n+1}}{q_{n+1}} \right\rvert = \left\lvert x - \frac{p_n}{q_n} \right\rvert + \left\lvert x - \frac{p_{n+1}}{q_{n+1}} \right\rvert.$$ Now argue by contradiction.
+    \begin{proof}
+        First, a property of consecutive convergents is 
+        \[
+            C_{n+1} - C_n = \frac{p_n}{q_n} - \frac{p_{n+1}}{q_{n+1}} = \frac{(-1)^n}{q_{n+1}q_n}
+        \]
+        Taking the absolute value, 
+        \[
+            \left\lvert C_{n+1} - C_n \right\rvert = \left\lvert \frac{p_n}{q_n} - \frac{p_{n+1}}{q_{n+1}} \right\rvert = \frac{1}{q_{n+1}q_n}
+        \]
+
+        Now suppose that neither convergent satisfies the aforementioned inequality. That is, 
+    `   \[
+            \left\lvert x - \frac{p_n}{q_n} \right\rvert \ge \frac{1}{2q_n^2} \quad\text{and}\quad \left\lvert x - \frac{p_{n+1}}{q_{n+1}} \right\rvert \ge \frac{1}{2q_{n+1}^2}
+        \]
+        Adding these inequalities, we get 
+        \[
+            \left\lvert x - \frac{p_n}{q_n} \right\rvert + \left\lvert x - \frac{p_{n+1}}{q_{n+1}} \right\rvert \ge \frac{1}{2q_n^2} + \frac{1}{2q_{n+1}^2} 
+        \]
+        And by substitution, 
+        \[
+            \left\lvert \frac{p_n}{q_n} - \frac{p_{n+1}}{q_{n+1}} \right\rvert \ge \frac{1}{2q_n^2} + \frac{1}{2q_{n+1}^2}
+        \]
+        Since $\frac{1}{q_n^2} + \frac{1}{q_{n+1}^2} \ge \frac{2}{q_nq_{n+1}}$, then we can conclude
+        \[
+            \frac{1}{2q_n^2} + \frac{1}{2q_{n+1}^2} \ge \frac{1}{q_nq_{n+1}}
+        \]
+        Thus, we have 
+        \[
+            \left\lvert \frac{p_n}{q_n} - \frac{p_{n+1}}{q_{n+1}} \right\rvert \ge \frac{1}{q_nq_{n+1}}
+        \]
+
+        However, this contradicts the property from the beginning of the proof. 
+        Thus at least one convergent satisfies the inequality
+        $$ \left\lvert x - \frac{p_i}{q_i} \right\rvert < \frac{1}{2q_i^2}. $$
+    \end{proof}
+
+\end{enumerate}
+
+\end{document}
+

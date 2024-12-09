@@ -120,3 +120,12 @@
 \contentsline {section}{\numberline {23.3}Continued Fractions}{85}{section.23.3}%
 \contentsline {chapter}{\numberline {24}Lecture 24}{89}{chapter.24}%
 \contentsline {section}{\numberline {24.1}Recall: Continued Fractions}{89}{section.24.1}%
+\contentsline {chapter}{\numberline {25}Lecture 25}{93}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Continue continued fractions}{93}{section.25.1}%
+\contentsline {chapter}{\numberline {26}Lecture 26}{95}{chapter.26}%
+\contentsline {section}{\numberline {26.1}Square-triangular numbers}{95}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Square-pyramid numbers}{96}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Wiener's attack on RSA}{96}{section.26.3}%
+\contentsline {subsection}{\numberline {26.3.1}RSA Recap}{96}{subsection.26.3.1}%
+\contentsline {subsection}{\numberline {26.3.2}Attack Theorem}{96}{subsection.26.3.2}%
+\contentsline {section}{\numberline {26.4}Final}{98}{section.26.4}%

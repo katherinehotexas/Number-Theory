@@ -1,0 +1,44 @@
+\chapter{Lecture 25}
+\date{December 3, 2024}
+
+\section{Continue continued fractions}
+    If $\alpha$ is irrational, there exist unique infinite continued fraction expansion 
+    \[
+        \alpha = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \frac{1}{a_4 + \dots}}}} = [a_0; a_1, a_2, \dots] \quad\text{where } a_j\in\ZZ, a_i > 0, i\ge 1
+    \]
+    Convergent $C_k = [a_0; a_1, \dots, a_k]$
+
+    \begin{theorem}
+        Define 
+        \begin{align*}
+            p_0 &= a_0, \quad q_0 = 1 \\
+            p_1 &= a_0a_1 + 1, \quad q_1 = a_1 \\
+            p_n &= a_np_{n-1} + p_{n-2}, \quad q_n = a_nq_{n-1}+q_{n-2}
+        \end{align*}
+        Then $C_n = \frac{p_n}{q_n}$ for all $n$. 
+    \end{theorem}
+
+    Prop: 
+    \[
+        |\frac{p_{n+1}}{q_{n+1}} - \frac{p_n}{q_n}| = |\frac{p_{n+1}q_n - p_nq_{n+1}}{q_nq_{n+1}}| = \frac{1}{q_nq_{n+1}} < \frac{1}{q_n^2}
+    \]
+    since $q_0 < q_1 < q_2 < \dots$
+
+    \[
+        \rightarrow |\alpha - \frac{p_n}{q_n}| < \frac{1}{q_{n+1}q_n} < \frac{1}{q_n^2}
+    \]
+
+    \begin{theorem}
+        If $1 \le b < q_n$, then 
+        \[
+            |\alpha - \frac{p_n}{q_n}| < |\alpha - \frac{a}{b}|
+        \]
+        (follows from the "struggle lemma")
+    \end{theorem}
+
+    \begin{lemma}
+        If $1\le b < q_{n+1}$, then 
+        \[
+            |q_n \alpha - p_n| < |b\alpha - a|
+        \]
+    \end{lemma}

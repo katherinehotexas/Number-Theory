@@ -1,0 +1,180 @@
+\chapter{Lecture 26}
+\date{December 5, 2024}
+
+\section{Square-triangular numbers}
+    \[
+        1,3,6,10,15,21,28,36,45,55,66,78,91,\dots
+    \]
+    Each number is $1 + 2 + 3 + \dots$
+    \[
+        T_n = 1+2+3+\dots+n = \frac{n(n+1)}{2}
+    \]
+    \[
+        T_49 = 1225 = 35^2
+    \]
+    1225 is a square-triangular number 
+
+    \underline{Q}: Are there infinitely many square-triangular numbers? YES! 
+
+    A \textbf{square-triangular number} must satisfy
+    \[
+        n^2 = \frac{m(m+1)}{2} \quad\text{for some pos integers } m,n
+    \]
+    \begin{align*}
+        2n^2 &= m^2 + m \\
+        8n^2 &= (2m+1)^2 - 1 \\
+        (2m+1)^2 - 8n^2 &= 1
+    \end{align*}
+    Let $x = 2m+1$, $y=2n$. 
+    \[
+        \rightarrow x^2-2y^2 = 1
+    \]
+    (Pell's Equation)
+
+    Find the fundamental solution by computing the components of $\sqrt{2}$.
+    \[
+        \sqrt{2} = [1; \overline{2}]
+    \]
+    Convergents: $\frac{1}{1}, \frac{3}{2}, \frac{7}{5}, \dots$ 
+    \begin{align*}
+        (x=1, y=1) &\quad 1^2 - 2\cdot 1^2 = -1 \\
+        (x=3, y=2) &\quad 3^2 - 2\cdot 2^2 = 1 
+    \end{align*}
+    
+    So $x = 3, y = 2$ is the fundamental solution. 
+
+    $\leftrightarrow m = 1, n = 1$ corresponds to the square-triangular number $T_1 = 2^2 = 1$
+
+    Recall: Every other positive solution is of the form $x_n, y_n$, 
+    \[
+        x_n = y_n\sqrt{2} = (3+2\sqrt{2})^n
+    \]
+
+    Ex: 
+    \begin{align*}
+        (3+2\sqrt{2})^2 &= 9+8+12\sqrt{2} \\
+        &= 17 + 12\sqrt{2} \\
+        \rightarrow m = \frac{17-1}{8}, n = \frac{12}{2} = 6 \\
+        \leftrightarrow T_8 = 6^2 = 36
+    \end{align*}
+
+    Ex: 
+    \begin{align*}
+        (3+2\sqrt{2})^3 &= (3 + 2\sqrt{2})(17+12\sqrt{2}) \\
+        &= 99+70\sqrt{2} \\
+        \rightarrow m = 49, n = 35 \\
+        T_{49} = 35^2 = 1225
+    \end{align*}
+
+\section{Square-pyramid numbers}
+    "Stacking cannonballs"
+    \[
+        9+4+1
+    \]
+    (Sum of consecutive squares)
+
+    When is 
+    \[
+        1^2 + 2^2 + \dots + m^2 = n^2?
+    \]
+    \[
+        1^2 + 2^2 + \dots + 24^2 \quad\text{is a square}
+    \]
+
+\section{Wiener's attack on RSA}
+    \subsection{RSA Recap}
+    Pick two primes $p,q$, compute $n=pq$. 
+    \[
+        \phi(n) = (p-1)(q-1) = n-p-q+1
+    \]
+    Choose $E,D$ such that 
+    \[
+        ED = 1\pmod{\phi(n)}
+    \]
+    $\rightarrow$ Public key (n, E) $\rightarrow$ Encode $Z\rightarrow Z^E\pmod{n}$ \\
+    $\rightarrow$ Private key (n, D) $\rightarrow$ Decode $W\rightarrow W^D\pmod{n}$
+
+    \subsection{Attack Theorem}
+    \begin{theorem}
+        If $D < 3n^{\frac{1}{4}}$, then it is possible to efficiently recover D (and factor n)
+        only given the public key (n, E).
+    \end{theorem}
+    Ex: If n has 1024 binary digits, then you must have D at least 
+    around 256 binary digits long
+
+    \begin{proof}
+        Since $DE = 1\pmod{\phi(n)}$, we have 
+        \[
+            DE = 1 + k\phi(n)\quad\text{for some } k
+        \]
+        \begin{align*}
+            |DE - k\phi(n)| = 1 \\
+            |\frac{E}{\phi(n) - \frac{k}{D}} = \frac{1}{D\phi(n)} \\
+            \rightarrow \frac{k}{D} \text{ approximates } \frac{E}{\phi(n)} 
+        \end{align*}
+    \end{proof}
+    Idea: $\phi(n)$ is "close" to n. 
+
+    Now $\phi(n) = n-p-q+1$. 
+    \[
+        |n-\phi(n)| = p+q-1 < 3\sqrt{n}
+    \]
+    Bound 
+    \begin{align*}
+        |\frac{E}{n} -\frac{k}{D}| &= |\frac{ED-kn}{nD}| \\
+        &= |\frac{ED = k\phi(n) - kn + k\phi(n)}{nD}| \\
+        &= |\frac{1-k(n-\phi(n))}{nD}| \\
+        &= \frac{1}{nD} + \frac{k(n-phi(n))}{nD} \le \frac{k(n-\phi(n))}{nD}
+    \end{align*}
+
+    \begin{align*}
+        |\frac{E}{n} -\frac{k}{D}| &< \frac{k(n-\phi(n))}{nD} \\
+        &< \frac3{k}{\sqrt{n}D} < \frac{3D}{\sqrt{n}D}
+    \end{align*}
+
+    Claim: $k < D$
+    \begin{proof} [Proof of Claim]
+        \[
+            k\phi(n) = DE-1 < DE
+        \]
+        On the other hand, $E<\phi(n)$.
+    \end{proof}
+
+    Assume $D < \frac{1}{3}n^{\frac{1}{4}}$. Now use
+    \begin{align*}
+        D < \frac{1}{3}n^{\frac{1}{4}} \\
+        D^2 < \frac{1}{9}\sqrt{n} \\
+        \frac{1}{D^2} > \frac{9}{\sqrt{n}} 
+    \end{align*}
+    Hence 
+    \[
+        |\frac{E}{n} - \frac{k}{D}| < \frac{3}{\sqrt{n}} < \frac{3}{9D^2} = \frac{1}{3D^2} < \frac{1}{2D^2}
+    \]
+
+    By thm from last time, $\frac{k}{D}$ must be a convergent of $\frac{E}{n}$. 
+    In fact, $\gcd(k, D) = 1$ and convergents are always in lowest terms. 
+
+    Ex: $n = 101. 107 = 10807$. 
+
+    $\phi(n) = 10600, D = 3, E = 7067$. 
+
+    Public key: $(10807, 7067)$
+
+    $\frac{E}{n} = \frac{7067}{10807} = [0;1,1,1,8,17,1,2,2]$
+
+    Convergents: $\frac{1}{1}, \frac{1}{2}, \frac{2}{3}, \frac{17}{26}$
+
+    $3\cdot 7067 = 2; 10600 + 1$
+
+    \[
+        (x-p)(x-q) = x^2 - (p+q)x + n
+    \]
+
+\section{Final}
+    Exam is cumulative 
+
+    Half is from this unit (material from homeworks; same topics)
+
+    1 sheet of paper cheat sheet 
+
+    Need a calculator
