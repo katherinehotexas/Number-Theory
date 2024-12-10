@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.27)  8 DEC 2024 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.27)  9 DEC 2024 20:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/katie/Documents/M328K/Homework/Homework 11/M328_HW_11.tex"
-(c:/Users/katie/Documents/M328K/Homework/Homework 11/M328_HW_11.tex
+**"c:/Users/katie/Documents/UT/24-25/M328K/Homework/Homework 11/M328_HW_11.tex"
+(c:/Users/katie/Documents/UT/24-25/M328K/Homework/Homework 11/M328_HW_11.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
 (C:\Users\katie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -520,14 +520,14 @@ Package rerunfilecheck Info: File `M328_HW_11.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  13239 strings out of 473898
- 203715 string characters out of 5726479
+ 203796 string characters out of 5726479
  1946960 words of memory out of 5000000
  35907 multiletter control sequences out of 15000+600000
  597000 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,601b,686s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,610b,686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/katie/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on M328_HW_11.pdf (4 pages, 262005 bytes).
+Output written on M328_HW_11.pdf (4 pages, 261957 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  13 named destinations out of 1000 (max. 500000)
